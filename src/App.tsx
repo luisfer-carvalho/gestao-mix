@@ -23,6 +23,111 @@ const notifications = [
   { name: 'Fernanda C.', city: 'Goiânia, GO', action: 'comprou o Gestão Mix', time: 'Há 4 min' },
 ];
 
+const SystemMockupGraphic = () => (
+  <motion.div 
+    initial={{ opacity: 0, x: 20 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.7, delay: 0.2 }}
+    className="relative rounded-2xl bg-dark-card border border-white/10 shadow-2xl overflow-hidden flex h-[350px] md:h-[360px] w-full"
+  >
+    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-electric-purple to-gold z-20"></div>
+    
+    {/* Sidebar (Based on screenshot) */}
+    <div className="w-1/3 max-w-[140px] bg-[#4a148c] border-r border-[#380b6e] flex flex-col pt-4 z-10 shrink-0">
+       <div className="flex flex-col gap-1 mb-6 px-3">
+         <div className="flex items-center gap-1.5">
+           <div className="w-4 h-4 bg-transparent rounded flex items-center justify-center shrink-0">
+             <IceCream2 className="w-4 h-4 text-pink-400" />
+           </div>
+           <span className="text-[11px] font-bold text-white tracking-tight truncate">Gestão Mix</span>
+         </div>
+         <span className="text-[8px] text-zinc-300 ml-5 leading-tight">📍 Açaiteria &amp;<br/>Sorveteria</span>
+       </div>
+       <div className="flex flex-col overflow-y-auto w-full pb-4" style={{ scrollbarWidth: 'none' }}>
+          <div className="flex items-center gap-1.5 px-3 py-2 bg-white/10 text-white border-l-2 border-pink-400 w-full mb-1">
+             <span className="text-[9px] font-semibold">Visão Geral</span>
+          </div>
+          {[
+            'PDV / Vendas', 'Insumos / Estoque', 'Açaís Montados', 'Milk-shakes', 'Produtos Revenda', 'Custo da Operação', 'Configuração', 'Minha Conta'
+          ].map(item => (
+            <div key={item} className="flex items-center gap-1.5 px-3 py-2 text-zinc-300 hover:bg-white/5 hover:text-white cursor-default transition-colors w-full">
+               <span className="text-[9px] truncate">{item}</span>
+            </div>
+          ))}
+       </div>
+    </div>
+
+    {/* Main Content (Based on screenshot) */}
+    <div className="flex-1 p-4 flex flex-col z-10 bg-[#f8f9fa] overflow-hidden text-zinc-800">
+      <div className="flex items-center gap-2 mb-3 mt-1">
+        <span className="text-zinc-900 text-[14px] font-bold">Visão Geral</span>
+      </div>
+
+      <div className="grid grid-cols-2 gap-2 mb-3">
+        {/* Faturamento */}
+        <div className="rounded border border-zinc-200 bg-white p-2.5 flex items-center gap-2 shadow-sm">
+          <div className="w-6 h-6 bg-green-100 text-green-600 font-bold rounded flex items-center justify-center text-[10px] shrink-0">$</div>
+          <div className="flex flex-col">
+             <span className="text-[8px] text-zinc-500 mb-0.5">Faturamento Total</span>
+             <span className="font-display font-bold text-[13px] text-zinc-800 leading-none">R$ 235,97</span>
+          </div>
+        </div>
+        {/* Lucro Bruto */}
+        <div className="rounded border border-zinc-200 bg-white p-2.5 flex items-center gap-2 shadow-sm">
+          <div className="w-6 h-6 bg-blue-100 text-blue-600 font-bold rounded flex items-center justify-center text-[10px] shrink-0"><TrendingUp className="w-3 h-3" /></div>
+          <div className="flex flex-col">
+             <span className="text-[8px] text-zinc-500 mb-0.5">Lucro Bruto (Aprox.)</span>
+             <span className="font-display font-bold text-[13px] text-zinc-800 leading-none">R$ 144,59</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-2 flex-1">
+        {/* Produtos Mais Vendidos */}
+        <div className="rounded border border-zinc-200 bg-white p-2.5 flex flex-col shadow-sm">
+          <div className="flex items-center gap-1 mb-2 border-b border-zinc-100 pb-1.5">
+            <span className="text-zinc-400 text-[9px]">🛒</span>
+            <span className="text-[10px] font-bold text-zinc-800">Produtos Mais Vendidos</span>
+          </div>
+          <div className="space-y-1.5">
+            <div className="flex justify-between items-center bg-zinc-50 p-1.5 rounded text-[9px]">
+              <span className="text-zinc-600 truncate">Milkshake 500 ml</span>
+              <span className="text-purple-600 font-medium bg-purple-100 px-1 rounded text-[8px] shrink-0">7 un</span>
+            </div>
+            <div className="flex justify-between items-center bg-zinc-50 p-1.5 rounded text-[9px]">
+              <span className="text-zinc-600 truncate">Açai Gratidão 500 ml</span>
+              <span className="text-purple-600 font-medium bg-purple-100 px-1 rounded text-[8px] shrink-0">4 un</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Estoque Baixo */}
+        <div className="rounded border border-zinc-200 bg-white p-2.5 flex flex-col shadow-sm">
+          <div className="flex items-center gap-1 mb-2 border-b border-zinc-100 pb-1.5">
+            <span className="text-red-500 text-[9px] font-bold">!</span>
+            <span className="text-[10px] font-bold text-zinc-800">Estoque Baixo</span>
+          </div>
+          <div className="space-y-1.5 overflow-y-auto pr-1" style={{ scrollbarWidth: 'none' }}>
+            {[
+              { name: 'Mousse de maracuja', val: '0 g', min: '0 g' },
+              { name: 'sacola', val: '-11 un', min: '0 un' },
+              { name: 'copo 300 ml', val: '0 un', min: '0 un' },
+            ].map((item, i) => (
+              <div key={i} className="flex justify-between items-center bg-red-50 p-1 rounded text-[9px]">
+                <span className="text-zinc-700 truncate pr-1 text-[8px]">{item.name}</span>
+                <div className="flex items-center gap-1 shrink-0">
+                  <span className="text-red-600 font-bold text-[8px]">Atual: {item.val}</span>
+                  <span className="text-zinc-400 text-[7px]">Mín: {item.min}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </motion.div>
+);
+
 export default function App() {
   const [currentNotificationIndex, setCurrentNotificationIndex] = useState(0);
   const [showNotification, setShowNotification] = useState(false);
@@ -73,9 +178,11 @@ export default function App() {
           </span>
         </div>
         <a 
-          href="https://pay.hotmart.com/P105729842M?checkoutMode=10"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#oferta"
+          onClick={(e) => {
+            e.preventDefault();
+            document.querySelector('#oferta')?.scrollIntoView({ behavior: 'smooth' });
+          }}
           className="flex items-center gap-2 hover:text-gold transition-colors text-xs md:text-sm font-semibold bg-white/5 md:bg-transparent px-4 py-2 md:p-0 rounded-full md:rounded-none border border-white/10 md:border-none"
         >
           Garantir Acesso <TrendingUp className="w-4 h-4 hidden md:block" />
@@ -113,6 +220,10 @@ export default function App() {
             >
               Diferencie loja e iFood, faça a gestão de insumos, calcule a precificação exata de qualquer produto e descubra o seu <strong className="text-white">lucro real</strong> no fim do mês. Dê adeus às planilhas complexas.
             </motion.p>
+
+            <div className="w-full relative block lg:hidden pt-4 pb-2" style={{ perspective: 1000 }}>
+              <SystemMockupGraphic />
+            </div>
             
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -121,9 +232,11 @@ export default function App() {
               className="pt-4 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
             >
               <a 
-                href="https://pay.hotmart.com/P105729842M?checkoutMode=10"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#oferta"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('#oferta')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 className="w-full sm:w-auto px-6 py-4 md:px-8 md:py-4.5 rounded-full bg-gradient-to-r from-gold-light via-gold to-gold-dark text-black font-extrabold text-base md:text-lg text-center shadow-[0_0_30px_rgba(255,215,0,0.4)] hover:shadow-[0_0_40px_rgba(255,215,0,0.6)] hover:scale-105 transition-all animate-pulse"
               >
                 QUERO CONTROLAR MEU NEGÓCIO
@@ -167,126 +280,8 @@ export default function App() {
             </motion.div>
           </div>
 
-          <div className="lg:w-1/2 w-full mt-10 md:mt-12 lg:mt-0 relative hidden sm:block">
-            {/* System Mockup Graphic */}
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative rounded-2xl bg-dark-card border border-white/10 shadow-2xl overflow-hidden flex h-[360px]"
-            >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-electric-purple to-gold z-20"></div>
-              
-              {/* Sidebar (Based on screenshot) */}
-              <div className="w-1/3 max-w-[140px] bg-[#4a148c] border-r border-[#380b6e] flex flex-col pt-4 z-10 shrink-0">
-                 <div className="flex flex-col gap-1 mb-6 px-3">
-                   <div className="flex items-center gap-1.5">
-                     <div className="w-4 h-4 bg-transparent rounded flex items-center justify-center shrink-0">
-                       <IceCream2 className="w-4 h-4 text-pink-400" />
-                     </div>
-                     <span className="text-[11px] font-bold text-white tracking-tight truncate">Gestão Mix</span>
-                   </div>
-                   <span className="text-[8px] text-zinc-300 ml-5 leading-tight">📍 Açaiteria &amp;<br/>Sorveteria</span>
-                 </div>
-                 <div className="flex flex-col overflow-y-auto w-full pb-4" style={{ scrollbarWidth: 'none' }}>
-                    <div className="flex items-center gap-1.5 px-3 py-2 bg-white/10 text-white border-l-2 border-pink-400 w-full mb-1">
-                       <span className="text-[9px] font-semibold">Visão Geral</span>
-                    </div>
-                    {[
-                      'PDV / Vendas', 'Insumos / Estoque', 'Açaís Montados', 'Milk-shakes', 'Produtos Revenda', 'Custo da Operação', 'Configuração', 'Minha Conta'
-                    ].map(item => (
-                      <div key={item} className="flex items-center gap-1.5 px-3 py-2 text-zinc-300 hover:bg-white/5 hover:text-white cursor-default transition-colors w-full">
-                         <span className="text-[9px] truncate">{item}</span>
-                      </div>
-                    ))}
-                 </div>
-              </div>
-
-              {/* Main Content (Based on screenshot) */}
-              <div className="flex-1 p-4 flex flex-col z-10 bg-[#f8f9fa] overflow-hidden text-zinc-800">
-                <div className="flex items-center gap-2 mb-3 mt-1">
-                  <span className="text-zinc-900 text-[14px] font-bold">Visão Geral</span>
-                </div>
-
-                <div className="grid grid-cols-2 gap-2 mb-3">
-                  {/* Faturamento */}
-                  <div className="rounded border border-zinc-200 bg-white p-2.5 flex items-center gap-2 shadow-sm">
-                    <div className="w-6 h-6 bg-green-100 text-green-600 font-bold rounded flex items-center justify-center text-[10px] shrink-0">$</div>
-                    <div className="flex flex-col">
-                       <span className="text-[8px] text-zinc-500 mb-0.5">Faturamento Total</span>
-                       <span className="font-display font-bold text-[13px] text-zinc-800 leading-none">R$ 235,97</span>
-                    </div>
-                  </div>
-                  {/* Lucro Bruto */}
-                  <div className="rounded border border-zinc-200 bg-white p-2.5 flex items-center gap-2 shadow-sm">
-                    <div className="w-6 h-6 bg-blue-100 text-blue-600 font-bold rounded flex items-center justify-center text-[10px] shrink-0"><TrendingUp className="w-3 h-3" /></div>
-                    <div className="flex flex-col">
-                       <span className="text-[8px] text-zinc-500 mb-0.5">Lucro Bruto (Aprox.)</span>
-                       <span className="font-display font-bold text-[13px] text-zinc-800 leading-none">R$ 144,59</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-2 flex-1">
-                  {/* Produtos Mais Vendidos */}
-                  <div className="rounded border border-zinc-200 bg-white p-2.5 flex flex-col shadow-sm">
-                    <div className="flex items-center gap-1 mb-2 border-b border-zinc-100 pb-1.5">
-                      <span className="text-zinc-400 text-[9px]">🛒</span>
-                      <span className="text-[10px] font-bold text-zinc-800">Produtos Mais Vendidos</span>
-                    </div>
-                    <div className="space-y-1.5">
-                      <div className="flex justify-between items-center bg-zinc-50 p-1.5 rounded text-[9px]">
-                        <span className="text-zinc-600 truncate">Milkshake 500 ml</span>
-                        <span className="text-purple-600 font-medium bg-purple-100 px-1 rounded text-[8px] shrink-0">7 un</span>
-                      </div>
-                      <div className="flex justify-between items-center bg-zinc-50 p-1.5 rounded text-[9px]">
-                        <span className="text-zinc-600 truncate">Açai Gratidão 500 ml</span>
-                        <span className="text-purple-600 font-medium bg-purple-100 px-1 rounded text-[8px] shrink-0">4 un</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Estoque Baixo */}
-                  <div className="rounded border border-zinc-200 bg-white p-2.5 flex flex-col shadow-sm">
-                    <div className="flex items-center gap-1 mb-2 border-b border-zinc-100 pb-1.5">
-                      <span className="text-red-500 text-[9px] font-bold">!</span>
-                      <span className="text-[10px] font-bold text-zinc-800">Estoque Baixo</span>
-                    </div>
-                    <div className="space-y-1.5 overflow-y-auto pr-1" style={{ scrollbarWidth: 'none' }}>
-                      {[
-                        { name: 'Mousse de maracuja', val: '0 g', min: '0 g' },
-                        { name: 'sacola', val: '-11 un', min: '0 un' },
-                        { name: 'copo 300 ml', val: '0 un', min: '0 un' },
-                      ].map((item, i) => (
-                        <div key={i} className="flex justify-between items-center bg-red-50 p-1 rounded text-[9px]">
-                          <span className="text-zinc-700 truncate pr-1 text-[8px]">{item.name}</span>
-                          <div className="flex items-center gap-1 shrink-0">
-                            <span className="text-red-600 font-bold text-[8px]">Atual: {item.val}</span>
-                            <span className="text-zinc-400 text-[7px]">Mín: {item.min}</span>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Floating Visual Elements */}
-            <motion.div 
-              initial={{opacity:0, scale:0.8}}
-              animate={{opacity:1, scale:1}}
-              transition={{duration:0.5, delay:0.6}}
-              className="hidden lg:flex absolute -right-6 md:-right-12 top-10 bg-dark-card border border-white/10 p-4 rounded-xl shadow-xl items-center gap-3 backdrop-blur-md z-30"
-            >
-              <div className="w-10 h-10 rounded-full bg-electric-purple/20 flex items-center justify-center">
-                <Bike className="w-5 h-5 text-electric-purple" />
-              </div>
-              <div>
-                <p className="text-xs text-zinc-400">Taxa iFood Separada</p>
-                <p className="text-sm font-bold text-white">Lucro Real Garantido</p>
-              </div>
-            </motion.div>
+          <div className="lg:w-1/2 w-full mt-10 md:mt-12 lg:mt-0 relative hidden lg:block">
+            <SystemMockupGraphic />
           </div>
         </div>
       </section>
@@ -296,7 +291,7 @@ export default function App() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-4 md:mb-6">Tudo o que você precisa, <span className="text-electric-purple">sem dor de cabeça</span></h2>
-            <p className="text-zinc-400 text-base md:text-lg">Desenhado especificamente para a dinâmica rápida e a necessidade de controle exato de açaiterias e sorveterias.</p>
+            <p className="text-zinc-400 text-base md:text-lg">Feito para aguentar a correria do dia a dia e calcular fácil as vendas de açaiterias e sorveterias, sem complicar.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -324,7 +319,7 @@ export default function App() {
               </div>
               <h3 className="text-xl md:text-2xl font-bold font-display mb-3">PDV Ágil de Balcão</h3>
               <p className="text-zinc-400 leading-relaxed text-sm md:text-base">
-                Agilidade extrema para não formar fila no balcão nos dias de pico. Interface intuitiva que qualquer funcionário aprende a usar em 5 minutos.
+                Agilidade para não formar fila no balcão nos dias de calor e muito movimento. Uma tela super fácil que qualquer funcionário aprende a usar em 5 minutos.
               </p>
             </motion.div>
 
@@ -361,16 +356,16 @@ export default function App() {
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-electric-purple/10 border border-electric-purple/30 text-electric-purple text-xs md:text-sm font-bold mb-4 uppercase tracking-wider">
                   <Calculator className="w-4 h-4" /> Controle de Insumos
                 </div>
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold font-display mb-4 md:mb-5">Precificação milimétrica do seu cardápio</h3>
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold font-display mb-4 md:mb-5">Calcule o preço exato do seu cardápio</h3>
                 <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6 md:mb-8 font-medium">
-                  Saiba exatamente qual é o custo da montagem do seu açaí. Adicione Leite em Pó, Nutella, Morango e o sistema calcula o custo por grama, blindando sua margem de lucro.
+                  Saiba exatamente quanto custa montar o seu copo de açaí. Adicione Leite em Pó, Nutella ou Morango, e o sistema mostra o custo por grama. Assim você nunca mais vende tomando prejuízo.
                 </p>
                 <div className="flex flex-col gap-3 md:gap-4 justify-center lg:justify-start items-center lg:items-start text-sm md:text-base">
                   <div className="flex items-center gap-3 text-zinc-200 bg-white/5 w-full md:w-auto px-4 py-2.5 rounded-xl border border-white/5">
-                    <CheckCircle2 className="w-5 h-5 text-gold shrink-0" /> Custo fracionado por grama ou unidade
+                    <CheckCircle2 className="w-5 h-5 text-gold shrink-0" /> Custo de cada grama e complemento
                   </div>
                   <div className="flex items-center gap-3 text-zinc-200 bg-white/5 w-full md:w-auto px-4 py-2.5 rounded-xl border border-white/5">
-                    <CheckCircle2 className="w-5 h-5 text-gold shrink-0" /> Sugestão inteligente de preço de venda (Markup)
+                    <CheckCircle2 className="w-5 h-5 text-gold shrink-0" /> Sugestão de preço para garantir sua margem de lucro
                   </div>
                 </div>
               </div>
@@ -397,7 +392,7 @@ export default function App() {
                            <span className="font-bold text-red-400 text-lg">R$ 6,90</span>
                         </div>
                         <div className="flex justify-between items-center">
-                           <span className="font-bold text-white">Preço Sugerido (150% markup):</span>
+                           <span className="font-bold text-white">Preço de Venda Sugerido:</span>
                            <span className="font-bold text-green-400 text-lg">R$ 17,25</span>
                         </div>
                       </div>
