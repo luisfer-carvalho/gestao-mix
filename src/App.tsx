@@ -29,6 +29,7 @@ import {
   DollarSign
 } from 'lucide-react';
 import { motion } from 'motion/react';
+import { SalesNotification } from './components/SalesNotification';
 
 const SystemMockupGraphic = () => (
   <motion.div 
@@ -245,7 +246,7 @@ const SystemMockupGraphic = () => (
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-deep-purple text-white overflow-hidden selection:bg-electric-purple selection:text-white font-sans">
+    <div className="min-h-screen bg-deep-purple text-white overflow-x-hidden relative selection:bg-electric-purple selection:text-white font-sans">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-[300px] md:h-[500px] bg-electric-purple/20 blur-[80px] md:blur-[120px] rounded-full -translate-y-1/2 opacity-50 pointer-events-none" />
       <div className="absolute top-1/3 right-0 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-gold/10 blur-[80px] md:blur-[100px] rounded-full translate-x-1/3 opacity-40 pointer-events-none" />
@@ -693,6 +694,9 @@ export default function App() {
           <path d="M12.004 0C5.378 0 0 5.378 0 12.004c0 2.115.553 4.148 1.603 5.952L.373 22l4.167-1.1c1.734.965 3.655 1.474 5.464 1.474 6.626 0 12.004-5.378 12.004-12.004S18.63 0 12.004 0zm0 21c-1.637 0-3.238-.42-4.664-1.22l-.332-.196-3.275.86.877-3.18-.216-.34A9.957 9.957 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10zm5.405-7.393c-.296-.148-1.754-.866-2.025-.965-.27-.099-.469-.148-.667.148-.197.297-.765.965-.938 1.163-.173.198-.346.223-.642.074-.296-.148-1.25-.46-2.383-1.468-.88-.785-1.475-1.753-1.648-2.05-.173-.297-.018-.458.13-.606.134-.133.296-.346.444-.52.148-.173.198-.297.296-.495.099-.198.05-.371-.024-.52-.074-.148-.667-1.608-.915-2.203-.242-.578-.487-.5-.667-.508-.173-.008-.371-.008-.569-.008-.198 0-.52.074-.791.371-.27.297-1.038 1.015-1.038 2.476s1.063 2.87 1.211 3.068c.148.198 2.091 3.193 5.066 4.478.708.307 1.261.49 1.694.627.711.226 1.36.194 1.872.118.574-.085 1.754-.717 2.001-1.411.247-.693.247-1.288.173-1.411-.074-.124-.271-.198-.568-.347z"/>
         </svg>
       </a>
+
+      {/* Sales Notifications */}
+      <SalesNotification />
     </div>
   );
 }
