@@ -3,14 +3,14 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ShoppingBag } from 'lucide-react';
 
 const salesData = [
-  { name: 'Maria S.', item: 'Barca de Açaí 1L', city: 'Belo Horizonte', time: 'Agora mesmo' },
-  { name: 'João P.', item: 'Açaí 500ml', city: 'Contagem', time: 'Há 2 min' },
-  { name: 'Ana M.', item: 'Milkshake Ninho', city: 'Betim', time: 'Há 5 min' },
-  { name: 'Carlos E.', item: 'Taça Vulcão', city: 'Belo Horizonte', time: 'Há 1 min' },
-  { name: 'Juliana F.', item: 'Açaí 700ml', city: 'Nova Lima', time: 'Agora mesmo' },
-  { name: 'Lucas R.', item: 'Fondue de Açaí', city: 'Contagem', time: 'Há 3 min' },
-  { name: 'Fernanda L.', item: 'Açaí 300ml', city: 'Belo Horizonte', time: 'Agora mesmo' },
-  { name: 'Ricardo T.', item: 'Sorvete 2 Bolas', city: 'Ibirité', time: 'Há 4 min' },
+  { name: 'Maria S.', item: 'Gestão Mix', city: 'Belo Horizonte', time: 'Agora mesmo' },
+  { name: 'João P.', item: 'Gestão Mix', city: 'São Paulo', time: 'Há 2 min' },
+  { name: 'Ana M.', item: 'Gestão Mix', city: 'Curitiba', time: 'Há 5 min' },
+  { name: 'Carlos E.', item: 'Gestão Mix', city: 'Rio de Janeiro', time: 'Há 1 min' },
+  { name: 'Juliana F.', item: 'Gestão Mix', city: 'Salvador', time: 'Agora mesmo' },
+  { name: 'Lucas R.', item: 'Gestão Mix', city: 'Goiânia', time: 'Há 3 min' },
+  { name: 'Fernanda L.', item: 'Gestão Mix', city: 'Fortaleza', time: 'Agora mesmo' },
+  { name: 'Ricardo T.', item: 'Gestão Mix', city: 'Porto Alegre', time: 'Há 4 min' },
 ];
 
 export function SalesNotification() {

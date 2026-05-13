@@ -246,8 +246,9 @@ const SystemMockupGraphic = () => (
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-deep-purple text-white overflow-x-hidden relative selection:bg-electric-purple selection:text-white font-sans">
-      {/* Decorative Background Elements */}
+    <>
+      <div className="min-h-screen bg-deep-purple text-white overflow-x-hidden relative selection:bg-electric-purple selection:text-white font-sans">
+        {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-[300px] md:h-[500px] bg-electric-purple/20 blur-[80px] md:blur-[120px] rounded-full -translate-y-1/2 opacity-50 pointer-events-none" />
       <div className="absolute top-1/3 right-0 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-gold/10 blur-[80px] md:blur-[100px] rounded-full translate-x-1/3 opacity-40 pointer-events-none" />
 
@@ -681,13 +682,14 @@ export default function App() {
           </div>
         </div>
       </footer>
+      </div>
 
       {/* WhatsApp Floating Button */}
       <a
         href="https://wa.me/5531998162792?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20o%20sistema%20Gest%C3%A3o%20Mix."
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 md:bottom-8 md:right-8 bg-[#25D366] text-white p-3.5 md:p-4 rounded-full shadow-2xl hover:scale-110 hover:shadow-3xl transition-all z-[9999] flex items-center justify-center cursor-pointer group"
+        className="fixed bottom-24 right-4 md:bottom-8 md:right-8 bg-[#25D366] text-white p-3 md:p-4 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:scale-110 hover:shadow-[0_0_30px_rgba(37,211,102,0.6)] transition-all z-[9999] flex items-center justify-center cursor-pointer group"
         aria-label="Fale conosco no WhatsApp"
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 md:w-8 md:h-8">
@@ -697,6 +699,6 @@ export default function App() {
 
       {/* Sales Notifications */}
       <SalesNotification />
-    </div>
+    </>
   );
 }
