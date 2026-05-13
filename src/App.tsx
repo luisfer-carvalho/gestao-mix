@@ -145,16 +145,6 @@ export default function App() {
             Gestão<span className="text-gold">Mix</span>
           </span>
         </div>
-        <a 
-          href="#oferta"
-          onClick={(e) => {
-            e.preventDefault();
-            document.querySelector('#oferta')?.scrollIntoView({ behavior: 'smooth' });
-          }}
-          className="flex items-center gap-2 hover:text-gold transition-colors text-xs md:text-sm font-semibold bg-white/5 md:bg-transparent px-4 py-2 md:p-0 rounded-full md:rounded-none border border-white/10 md:border-none"
-        >
-          Garantir Acesso <TrendingUp className="w-4 h-4 hidden md:block" />
-        </a>
       </header>
 
       {/* Hero Section */}
@@ -381,7 +371,7 @@ export default function App() {
                              <li>Confete separado</li>
                           </ul>
                           <div className="mt-3 pt-2 border-t border-yellow-200/50 flex justify-end">
-                             <button className="bg-green-500 hover:bg-green-600 text-white text-xs font-bold py-1.5 px-3 rounded-lg w-full transition-colors active:scale-95">Pronto</button>
+                             <div className="bg-green-500 text-white text-xs font-bold py-1.5 px-3 rounded-lg w-full text-center">Pronto</div>
                           </div>
                        </div>
                        {/* Ticket 2 */}
@@ -396,7 +386,7 @@ export default function App() {
                              <li>Embalar para viagem duplo</li>
                           </ul>
                           <div className="mt-3 pt-2 border-t border-purple-200/50 flex justify-end">
-                             <button className="bg-green-500 hover:bg-green-600 text-white text-xs font-bold py-1.5 px-3 rounded-lg w-full transition-colors active:scale-95">Pronto</button>
+                             <div className="bg-green-500 text-white text-xs font-bold py-1.5 px-3 rounded-lg w-full text-center">Pronto</div>
                           </div>
                        </div>
                     </div>
