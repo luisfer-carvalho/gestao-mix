@@ -272,7 +272,7 @@ export default function App() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-electric-purple/10 border border-electric-purple/30 text-electric-purple text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-wider mb-2"
           >
             <Store className="w-3.5 h-3.5 md:w-4 md:h-4" />
-            <span>OPERAÇÃO PROFISSIONAL E ORGANIZADA</span>
+            <span>OPERAÇÃO PROFISSIONAL E LUCRATIVA</span>
           </motion.div>
           
           <motion.h1 
@@ -281,17 +281,35 @@ export default function App() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-[1.15] md:leading-[1.1] tracking-tight"
           >
-            <span className="text-gold block mb-1 md:mb-2">VOCÊ VENDE MUITO...</span> MAS SABE QUANTO REALMENTE LUCRA?
+            <span className="text-gold block mb-1 md:mb-2">VOCÊ VENDE MUITO...</span> MAS O LUCRO ESTÁ SOBRANDO NO FINAL DO MÊS?
           </motion.h1>
           
-          <motion.p 
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-base sm:text-lg md:text-xl text-zinc-300 font-normal leading-relaxed max-w-3xl mx-auto mb-4"
+            className="flex flex-col items-center max-w-3xl mx-auto mb-4 space-y-6"
           >
-            Acabe com a bagunça nos pedidos, furos no estoque e o fechamento de caixa manual. Tenha o controle total do seu negócio e descubra sua verdadeira margem de lucro.
-          </motion.p>
+            <p className="text-base sm:text-lg md:text-xl text-zinc-300 font-normal leading-relaxed">
+              O Gestão Mix foi criado para açaiterias e sorveterias que precisam parar de vender no escuro.<br className="hidden md:block" />
+              Descubra o custo REAL de cada montagem, calcule automaticamente as taxas do iFood, controle estoque, pedidos e saiba exatamente quanto sobra no seu bolso em cada venda.
+            </p>
+            
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 w-full">
+              {[
+                'Precificação Inteligente',
+                'Controle Real de Lucro',
+                'Gestão Delivery iFood',
+                'Estoque Automático',
+                'PDV Rápido e Organizado'
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 md:px-4 md:py-2 rounded-full">
+                  <span className="text-gold font-bold">✔</span>
+                  <span className="text-xs md:text-sm font-semibold text-white tracking-wide">{item}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
 
           <div className="w-full relative mt-4 mb-8" style={{ perspective: 1000 }}>
             <SystemMockupGraphic />
@@ -322,59 +340,53 @@ export default function App() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-4 md:mb-6">
-              Tudo o que você precisa, <span className="text-electric-purple">em um só lugar</span>
+              Tudo o que você precisa para <span className="text-electric-purple">parar de perder dinheiro</span> na sua operação
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg">Feito profissionalizar e organizar totalmente as vendas de açaiterias e sorveterias, eliminando o papel.</p>
+            <p className="text-zinc-400 text-base md:text-lg">O Gestão Mix foi desenvolvido para profissionalizar açaiterias e sorveterias que precisam controlar custos, organizar pedidos e aumentar o lucro real da operação.</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            <div className="bg-[#12001e] border border-white/10 rounded-2xl p-6 hover:border-electric-purple/50 transition-all flex flex-col items-start text-left">
-              <Monitor className="w-8 h-8 text-electric-purple mb-4" />
-              <h3 className="text-lg font-bold mb-2">PDV Ágil</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">Pedidos de balcão e mesas lançados em poucos cliques. Sem travar e fácil de usar no movimento.</p>
-            </div>
-            
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
             <div className="bg-[#12001e] border border-white/10 rounded-2xl p-6 hover:border-gold/50 transition-all flex flex-col items-start text-left">
               <Calculator className="w-8 h-8 text-gold mb-4" />
-              <h3 className="text-lg font-bold mb-2">Precificação Exata</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">Cálculo minucioso do custo por grama, adicionais e margem de lucro real para nunca ter prejuízo.</p>
+              <h3 className="text-lg font-bold mb-2">Precificação Inteligente</h3>
+              <p className="text-zinc-400 text-sm leading-relaxed">Descubra exatamente quanto custa cada açaí, milk-shake ou montagem. O sistema calcula ingredientes, adicionais, embalagens, taxas e sua margem de lucro automaticamente.</p>
             </div>
-
+            
             <div className="bg-[#12001e] border border-white/10 rounded-2xl p-6 hover:border-green-500/50 transition-all flex flex-col items-start text-left">
               <Box className="w-8 h-8 text-green-500 mb-4" />
-              <h3 className="text-lg font-bold mb-2">Controle de Estoque</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">Baixa automática de insumos a cada venda. Chega de descobrir que a Nutella acabou no meio do domingo.</p>
+              <h3 className="text-lg font-bold mb-2">Controle de Estoque Automático</h3>
+              <p className="text-zinc-400 text-sm leading-relaxed">Cada venda dá baixa automática nos insumos. Nunca mais descubra no meio do movimento que acabou Nutella, leite em pó ou morango.</p>
+            </div>
+
+            <div className="bg-[#12001e] border border-white/10 rounded-2xl p-6 hover:border-electric-purple/50 transition-all flex flex-col items-start text-left">
+              <Monitor className="w-8 h-8 text-electric-purple mb-4" />
+              <h3 className="text-lg font-bold mb-2">PDV Rápido e Organizado</h3>
+              <p className="text-zinc-400 text-sm leading-relaxed">Atenda clientes com agilidade no balcão, mesas e delivery sem travamentos, filas ou pedidos bagunçados.</p>
+            </div>
+            
+            <div className="bg-[#12001e] border border-white/10 rounded-2xl p-6 hover:border-orange-500/50 transition-all flex flex-col items-start text-left">
+              <Bike className="w-8 h-8 text-orange-500 mb-4" />
+              <h3 className="text-lg font-bold mb-2">Gestão Delivery e iFood</h3>
+              <p className="text-zinc-400 text-sm leading-relaxed">Saiba exatamente quanto cobrar no iFood considerando taxas, embalagens e margem de lucro para não vender no prejuízo.</p>
+            </div>
+
+            <div className="bg-[#12001e] border border-white/10 rounded-2xl p-6 hover:border-blue-500/50 transition-all flex flex-col items-start text-left">
+              <PieChart className="w-8 h-8 text-blue-500 mb-4" />
+              <h3 className="text-lg font-bold mb-2">Relatórios e Lucro Real</h3>
+              <p className="text-zinc-400 text-sm leading-relaxed">Veja faturamento, margem, produtos mais lucrativos e tenha clareza completa da saúde financeira da operação.</p>
             </div>
 
             <div className="bg-[#12001e] border border-white/10 rounded-2xl p-6 hover:border-red-500/50 transition-all flex flex-col items-start text-left">
               <ClipboardList className="w-8 h-8 text-red-500 mb-4" />
               <h3 className="text-lg font-bold mb-2">Produção Organizada</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">Monitor de pedidos para a cozinha montar as taças e barcas sem gritaria e sem erros.</p>
+              <p className="text-zinc-400 text-sm leading-relaxed">Pedidos enviados automaticamente para cozinha e montagem, evitando erros, gritaria e atrasos.</p>
             </div>
             
-            <div className="bg-[#12001e] border border-white/10 rounded-2xl p-6 hover:border-blue-500/50 transition-all flex flex-col items-start text-left">
-              <PieChart className="w-8 h-8 text-blue-500 mb-4" />
-              <h3 className="text-lg font-bold mb-2">Relatórios e Gráficos</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">Painéis visuais detalhados gerados automaticamente. Exporte para PDF e saiba suas métricas.</p>
-            </div>
-
-            <div className="bg-[#12001e] border border-white/10 rounded-2xl p-6 hover:border-purple-400/50 transition-all flex flex-col items-start text-left">
-              <Store className="w-8 h-8 text-purple-400 mb-4" />
-              <h3 className="text-lg font-bold mb-2">Fechamento de Caixa</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">Fechamento seguro de turnos e sangrias, acabando com furos no dinheiro e cálculos no papel.</p>
-            </div>
-
-            <div className="bg-[#12001e] border border-white/10 rounded-2xl p-6 hover:border-orange-500/50 transition-all flex flex-col items-start text-left">
-              <AlertTriangle className="w-8 h-8 text-orange-500 mb-4" />
-              <h3 className="text-lg font-bold mb-2">Módulo Fiscal (NFC-e)</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">Emissão de cupons fiscais e preparado para as normas do sefaz, sem sistemas paralelos.</p>
-            </div>
-
-            <div className="bg-[#12001e] border border-white/10 rounded-2xl p-6 hover:border-teal-400/50 transition-all flex flex-col items-start text-left relative overflow-hidden">
+            <div className="bg-[#12001e] border border-white/10 rounded-2xl p-6 hover:border-teal-400/50 transition-all flex flex-col items-start text-left relative overflow-hidden lg:col-span-3 sm:col-span-2 md:col-start-auto max-w-xl md:max-w-none mx-auto md:mx-0 w-full lg:w-1/3 mt-0 lg:mt-4 lg:mx-auto">
                <div className="absolute top-0 right-0 p-2 bg-teal-500 text-white text-[9px] font-bold rounded-bl-lg">PWA</div>
               <Smartphone className="w-8 h-8 text-teal-400 mb-4" />
-              <h3 className="text-lg font-bold mb-2">App de Bolso</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">Instale o painel como um aplicativo no celular e faça a gestão em tempo real de qualquer lugar.</p>
+              <h3 className="text-lg font-bold mb-2">App no Celular (PWA)</h3>
+              <p className="text-zinc-400 text-sm leading-relaxed">Acompanhe vendas, estoque e resultados diretamente do celular em tempo real.</p>
             </div>
           </div>
         </div>
