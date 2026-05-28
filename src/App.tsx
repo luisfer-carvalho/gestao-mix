@@ -283,7 +283,7 @@ export default function App() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-[1.15] md:leading-[1.1] tracking-tight"
           >
-            <span className="text-gold block mb-1 md:mb-2">VOCÊ VENDE MUITO...</span> MAS O LUCRO ESTÁ SOBRANDO NO FINAL DO MÊS?
+            <span className="text-gold block mb-1 md:mb-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Dono de Açaiteria ou Sorveteria:</span> Você sabe exatamente quanto do seu faturamento <span className="text-electric-purple">realmente vira lucro</span> no fim do mês?
           </motion.h1>
           
           <motion.div 
