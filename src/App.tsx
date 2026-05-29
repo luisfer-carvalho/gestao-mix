@@ -252,11 +252,6 @@ export default function App() {
       <div className="absolute top-0 left-0 w-full h-[300px] md:h-[500px] bg-electric-purple/20 blur-[80px] md:blur-[120px] rounded-full -translate-y-1/2 opacity-50 pointer-events-none" />
       <div className="absolute top-1/3 right-0 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-gold/10 blur-[80px] md:blur-[100px] rounded-full translate-x-1/3 opacity-40 pointer-events-none" />
 
-      {/* Top Banner Alert */}
-      <div className="bg-gradient-to-r from-red-700 to-red-600 text-white text-center py-2.5 px-4 text-xs sm:text-sm font-medium border-b border-red-500/50 shadow-md relative z-50">
-        <span className="font-bold">Atenção:</span> O lote de R$ 49,90 esgotou hoje. O preço atual é de <span className="font-bold text-gold drop-shadow-sm">R$ 97,00</span> (ainda sem mensalidades). Subiremos para <span className="font-bold">R$ 147,00</span> em breve.
-      </div>
-
       {/* Header / Nav */}
       <header className="container mx-auto px-6 py-4 md:py-6 flex justify-center items-center relative z-10">
         <div className="flex items-center gap-2 md:gap-3">
