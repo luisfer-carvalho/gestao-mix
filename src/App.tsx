@@ -650,7 +650,7 @@ export default function App() {
                     <CheckCircle2 className="w-4 h-4" /> ZERO Mensalidades
                   </div>
                   
-                  <a href="https://pay.hotmart.com/P105729842M?checkoutMode=10" target="_blank" rel="noopener noreferrer" className="w-full px-6 py-4 md:py-5 rounded-2xl bg-gradient-to-r from-gold-light via-gold to-gold-dark text-black font-black text-lg md:text-xl shadow-[0_10px_30px_rgba(255,215,0,0.3)] hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_10px_40px_rgba(255,215,0,0.5)] transition-all flex items-center justify-center gap-2 uppercase tracking-wide">
+                  <a href="https://pay.hotmart.com/P105729842M?off=r1a9m99p&checkoutMode=10" target="_blank" rel="noopener noreferrer" className="w-full px-6 py-4 md:py-5 rounded-2xl bg-gradient-to-r from-gold-light via-gold to-gold-dark text-black font-black text-lg md:text-xl shadow-[0_10px_30px_rgba(255,215,0,0.3)] hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_10px_40px_rgba(255,215,0,0.5)] transition-all flex items-center justify-center gap-2 uppercase tracking-wide">
                     Liberar Meu Acesso <TrendingUp className="w-5 h-5 md:w-6 md:h-6" />
                   </a>
                   
