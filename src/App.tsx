@@ -634,12 +634,16 @@ export default function App() {
                
                <div className="relative z-10 w-full flex flex-col items-center">
                   <span className="text-zinc-500 line-through text-lg block mb-1">De R$ 297,00</span>
-                  <span className="text-zinc-300 text-sm font-medium mb-2">por apenas um único pagamento de</span>
+                  <span className="text-zinc-300 text-base md:text-lg font-medium mb-2">Acesso vitalício por apenas</span>
                   
-                  <div className="flex items-start justify-center gap-1.5 md:gap-2 text-white mb-4">
+                  <div className="flex items-start justify-center gap-1.5 md:gap-2 text-white mb-1">
                     <span className="text-2xl md:text-3xl font-display font-bold mt-2 md:mt-3">R$</span>
-                    <span className="text-6xl md:text-[6rem] leading-none font-black font-display tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-zinc-300">49</span>
-                    <span className="text-2xl md:text-3xl md:mt-1 font-display font-bold text-zinc-300">,90</span>
+                    <span className="text-6xl md:text-[6rem] leading-none font-black font-display tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-zinc-300">97</span>
+                  </div>
+                  
+                  <div className="flex flex-col items-center justify-center mb-4">
+                    <span className="text-gold font-bold text-lg md:text-xl">à vista</span>
+                    <span className="text-zinc-400 text-sm font-medium mt-1">ou parcele no cartão em até 12x</span>
                   </div>
                   
                   <div className="mb-8 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold/10 text-gold text-xs md:text-sm font-bold border border-gold/20">
