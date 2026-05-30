@@ -597,25 +597,25 @@ export default function App() {
             
             {/* Context/Texts */}
             <div className="md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-red-500/10 text-red-400 uppercase tracking-widest text-[10px] md:text-xs font-bold mb-6 border border-red-500/20 shadow-[0_0_15px_rgba(239,68,68,0.2)]">
-                Lote Promocional Limitado
+              <span className="inline-block px-4 py-1.5 rounded-full bg-electric-purple/20 text-electric-purple uppercase tracking-widest text-[10px] md:text-xs font-bold mb-6 border border-electric-purple/30 shadow-[0_0_15px_rgba(139,92,246,0.2)]">
+                PLANO COMPLETO
               </span>
               
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 drop-shadow-md leading-[1.1]">
-                Condição Especial:<br className="hidden md:block"/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200">Sem Mensalidades, Pague Uma Só Vez</span>
+                O melhor sistema,<br className="hidden md:block"/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200">agora em assinatura acessível</span>
               </h2>
               
               <p className="text-zinc-400 mb-8 max-w-md text-sm md:text-base leading-relaxed">
-                Pare de rasgar dinheiro com aluguel de sistemas. Garanta o Gestão Mix completo de forma definitiva: você paga hoje e usa o sistema para sempre. Sem taxas ocultas.
+                Pare de perder o controle do seu negócio. Assine o Gestão Mix e tenha acesso a todas as ferramentas profissionais que você precisa para lucrar mais.
               </p>
               
               <div className="space-y-4 md:space-y-5 w-full max-w-sm">
                 {[
-                  'Acesso Total Liberado Para Sempre',
+                  'Acesso Ilimitado a Todas Ferramentas',
                   'Frente de Caixa (PDV) Prático e Rápido',
                   'Calculadora de Lucro e Monitor iFood',
-                  'Suporte de Verdade Direto no WhatsApp'
+                  'Atualizações e Novas Funcionalidades',
                 ].map((benefit, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-electric-purple/20 flex items-center justify-center shrink-0">
@@ -628,36 +628,40 @@ export default function App() {
             </div>
             
             {/* Pricing Box */}
-            <div className="md:w-[45%] w-full bg-black/40 border border-white/10 rounded-3xl p-6 md:p-10 flex flex-col items-center text-center shadow-2xl relative overflow-hidden">
+            <div className="md:w-[45%] w-full bg-black/40 border border-white/10 rounded-3xl p-6 md:p-10 flex flex-col items-center shadow-2xl relative overflow-hidden">
                <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 blur-[50px]"></div>
                <div className="absolute bottom-0 left-0 w-32 h-32 bg-electric-purple/15 blur-[50px]"></div>
                
                <div className="relative z-10 w-full flex flex-col items-center">
-                  <span className="text-zinc-500 line-through text-lg block mb-1">De R$ 297,00</span>
-                  <span className="text-zinc-300 text-base md:text-lg font-medium mb-2">Acesso vitalício por apenas</span>
+                  <h3 className="text-xl md:text-2xl font-black text-white mb-2 text-center tracking-tight">ACESSO COMPLETO AO GESTÃO MIX</h3>
+                  <p className="text-zinc-400 text-sm md:text-base mb-6 text-center max-w-sm">
+                    Tudo o que você precisa para controlar sua açaiteria ou sorveteria em um único sistema.
+                  </p>
                   
-                  <div className="flex items-start justify-center gap-1.5 md:gap-2 text-white mb-1">
-                    <span className="text-2xl md:text-3xl font-display font-bold mt-2 md:mt-3">R$</span>
-                    <span className="text-6xl md:text-[6rem] leading-none font-black font-display tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-zinc-300">97</span>
+                  <div className="flex items-end justify-center gap-1.5 md:gap-2 text-white mb-6">
+                    <span className="text-2xl md:text-3xl font-display font-bold pb-2 md:pb-4 text-zinc-400">R$</span>
+                    <span className="text-6xl md:text-[5.5rem] leading-none font-black font-display tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-zinc-300">49,90</span>
+                    <span className="text-lg md:text-xl text-zinc-400 font-bold pb-2 md:pb-4 uppercase">/ Mês</span>
                   </div>
                   
-                  <div className="flex flex-col items-center justify-center mb-4">
-                    <span className="text-gold font-bold text-lg md:text-xl">à vista</span>
-                    <span className="text-zinc-400 text-sm font-medium mt-1">ou parcele no cartão em até 12x</span>
+                  <div className="mb-8 w-full flex flex-col gap-3 text-sm md:text-base text-zinc-300 text-left px-2 sm:px-6">
+                    <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> <span className="font-medium">Sem fidelidade</span></div>
+                    <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> <span className="font-medium">Cancele quando quiser</span></div>
+                    <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> <span className="font-medium">Atualizações inclusas</span></div>
+                    <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> <span className="font-medium">Suporte incluso</span></div>
                   </div>
                   
-                  <div className="mb-8 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold/10 text-gold text-xs md:text-sm font-bold border border-gold/20">
-                    <CheckCircle2 className="w-4 h-4" /> ZERO Mensalidades
-                  </div>
-                  
-                  <a href="https://pay.hotmart.com/P105729842M?off=r1a9m99p&checkoutMode=10" target="_blank" rel="noopener noreferrer" className="w-full px-6 py-4 md:py-5 rounded-2xl bg-gradient-to-r from-gold-light via-gold to-gold-dark text-black font-black text-lg md:text-xl shadow-[0_10px_30px_rgba(255,215,0,0.3)] hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_10px_40px_rgba(255,215,0,0.5)] transition-all flex items-center justify-center gap-2 uppercase tracking-wide">
-                    Liberar Meu Acesso <TrendingUp className="w-5 h-5 md:w-6 md:h-6" />
+                  <a href="https://pay.hotmart.com/A106056595I?checkoutMode=10" target="_blank" rel="noopener noreferrer" className="w-full px-4 py-4 rounded-2xl bg-gradient-to-r from-gold-light via-gold to-gold-dark text-black shadow-[0_10px_30px_rgba(255,215,0,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all flex flex-col items-center justify-center">
+                    <span className="font-black text-xl md:text-2xl uppercase tracking-wide drop-shadow-sm">Começar Agora</span>
+                    <span className="text-xs font-bold opacity-80 mt-1">Acesso imediato após confirmação da assinatura.</span>
                   </a>
                   
-                  <div className="mt-5 flex items-center justify-center gap-4 text-[10px] md:text-xs text-zinc-500 w-full">
-                    <span className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5" /> Compra 100% segura</span>
-                    <span className="flex items-center gap-1.5"><Star className="w-3.5 h-3.5 fill-current" /> Acesso Imediato</span>
+                  <div className="mt-6 flex flex-col items-center justify-center gap-2 text-xs md:text-sm text-zinc-400 w-full bg-white/5 p-4 rounded-xl border border-white/10">
+                    <div className="flex items-center gap-2 font-bold text-white text-sm md:text-base"><ShieldCheck className="w-5 h-5 text-electric-purple" /> GARANTIA DE 7 DIAS</div>
+                    <span className="text-center font-medium leading-relaxed">Teste sem risco. Se não gostar, solicite o reembolso dentro do prazo da plataforma.</span>
                   </div>
+                  
+                  <p className="mt-5 text-xs text-zinc-400 font-medium text-center">Assine agora e comece a controlar seu lucro hoje mesmo</p>
                </div>
             </div>
 
