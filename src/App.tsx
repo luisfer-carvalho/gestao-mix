@@ -114,7 +114,7 @@ export default function App() {
             
             <div className="w-full max-w-[900px] aspect-video rounded-2xl md:rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(139,92,246,0.2)] bg-black/50 mb-6 relative z-20">
               <iframe 
-                src="https://www.youtube.com/embed/YA6LAxW3zSw" 
+                src="https://www.youtube.com/embed/3KzR4O3OAzk" 
                 title="Veja o Gestão Mix funcionando na prática" 
                 frameBorder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
