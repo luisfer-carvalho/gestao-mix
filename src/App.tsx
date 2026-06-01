@@ -31,7 +31,218 @@ import {
 import { motion } from 'motion/react';
 import { SalesNotification } from './components/SalesNotification';
 
+const SystemMockupGraphic = () => (
+  <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7, delay: 0.2 }}
+    className="relative rounded-2xl bg-[#fafafa] border border-white/10 shadow-2xl overflow-hidden flex h-[400px] md:h-[550px] w-full max-w-5xl mx-auto"
+  >
+    {/* Sidebar */}
+    <div className="hidden md:flex w-[220px] bg-[#6610f2] flex-col justify-between z-10 shrink-0 text-white">
+      <div>
+        <div className="p-5 flex items-center gap-3">
+          <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+            <IceCream2 className="w-5 h-5 text-pink-300" />
+          </div>
+          <div>
+            <span className="text-sm font-bold tracking-tight block leading-tight">Gestão Mix</span>
+            <span className="text-[9px] text-white/60 font-medium">📍 Sistema para Açaiteria</span>
+          </div>
+        </div>
 
+        <div className="flex flex-col mt-2 px-2 space-y-0.5" style={{ scrollbarWidth: 'none' }}>
+          <div className="flex items-center gap-3 px-3 py-2 bg-black/20 rounded-lg text-white w-full cursor-pointer">
+            <Home className="w-4 h-4" />
+            <span className="text-xs font-semibold">Visão Geral</span>
+          </div>
+          {[
+            { icon: ClipboardList, label: 'Pedidos / Mesas' },
+            { icon: UtensilsCrossed, label: 'Produção / Cozinha' },
+          ].map(item => (
+            <div key={item.label} className="flex items-center gap-3 px-3 py-2 text-white/70 hover:bg-white/10 hover:text-white rounded-lg cursor-default transition-colors w-full">
+              <item.icon className="w-4 h-4" />
+              <span className="text-xs">{item.label}</span>
+            </div>
+          ))}
+
+          <div className="flex items-center gap-3 px-3 py-2 text-white/70 hover:bg-white/10 hover:text-white rounded-lg cursor-default transition-colors w-full bg-white/5 border-l-2 border-[#6610f2]">
+             {/* The image shows PDV / Vendas as active but in the original mock Visão Geral was active. We'll make PDV slightly highlighted */}
+            <Monitor className="w-4 h-4" />
+            <span className="text-xs">PDV / Vendas</span>
+          </div>
+
+          {[
+            { icon: Box, label: 'Insumos / Estoque' },
+            { icon: IceCream2, label: 'Açais Montados' },
+            { icon: CupSoda, label: 'Milk-shakes' },
+            { icon: BaggageClaim, label: 'Produtos Revenda' },
+            { icon: Calculator, label: 'Custo da Operação' },
+            { icon: Settings, label: 'Configurações' },
+            { icon: FileText, label: 'Fiscal / Certificado' },
+            { icon: User, label: 'Minha Conta' }
+          ].map(item => (
+            <div key={item.label} className="flex items-center gap-3 px-3 py-2 text-white/70 hover:bg-white/10 hover:text-white rounded-lg cursor-default transition-colors w-full">
+              <item.icon className="w-4 h-4 shrink-0" />
+              <span className="text-xs truncate">{item.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="p-4 bg-black/10 flex items-center justify-between cursor-pointer">
+         <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
+               <User className="w-3.5 h-3.5" />
+            </div>
+            <span className="text-xs font-medium">Usuário</span>
+         </div>
+         <ChevronDown className="w-3.5 h-3.5 text-white/50" />
+      </div>
+    </div>
+
+    {/* Main Content */}
+    <div className="flex-1 p-5 md:p-6 flex flex-col z-10 bg-[#fafafa] overflow-y-auto text-zinc-800" style={{ scrollbarWidth: 'none' }}>
+      <div className="flex items-center gap-2 mb-6">
+        <h1 className="text-xl md:text-2xl font-bold text-zinc-800">Visão Geral</h1>
+        <span className="text-xs text-zinc-400 mt-1">(Hoje)</span>
+      </div>
+
+      {/* Top 4 Cards */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div className="rounded-xl border border-zinc-200 bg-white p-4 flex justify-between items-center shadow-sm">
+          <div className="flex flex-col">
+             <span className="text-[10px] md:text-xs text-zinc-500 mb-1">Faturamento Hoje</span>
+             <span className="font-display font-bold text-lg md:text-xl text-zinc-900 leading-none">R$ 545,23</span>
+          </div>
+          <div className="w-8 h-8 md:w-10 md:h-10 bg-green-50 text-green-500 rounded-lg flex items-center justify-center shrink-0">
+             <DollarSign className="w-5 h-5" />
+          </div>
+        </div>
+        <div className="rounded-xl border border-zinc-200 bg-white p-4 flex justify-between items-center shadow-sm">
+          <div className="flex flex-col">
+             <span className="text-[10px] md:text-xs text-zinc-500 mb-1">Lucro Bruto Hoje</span>
+             <span className="font-display font-bold text-lg md:text-xl text-zinc-900 leading-none">R$ 302,15</span>
+          </div>
+          <div className="w-8 h-8 md:w-10 md:h-10 bg-blue-50 text-blue-500 rounded-lg flex items-center justify-center shrink-0">
+             <TrendingUp className="w-5 h-5" />
+          </div>
+        </div>
+        <div className="rounded-xl border border-zinc-200 bg-white p-4 flex justify-between items-center shadow-sm">
+          <div className="flex flex-col">
+             <span className="text-[10px] md:text-xs text-zinc-500 mb-1">Vendas Realizadas Hoje</span>
+             <span className="font-display font-bold text-lg md:text-xl text-zinc-900 leading-none">12</span>
+          </div>
+          <div className="w-8 h-8 md:w-10 md:h-10 bg-purple-50 text-purple-500 rounded-lg flex items-center justify-center shrink-0">
+             <ShoppingCart className="w-5 h-5" />
+          </div>
+        </div>
+        <div className="rounded-xl border border-zinc-200 bg-white p-4 flex justify-between items-center shadow-sm">
+          <div className="flex flex-col">
+             <span className="text-[10px] md:text-xs text-zinc-500 mb-1">Ticket Médio Hoje</span>
+             <span className="font-display font-bold text-lg md:text-xl text-zinc-900 leading-none">R$ 45,44</span>
+          </div>
+          <div className="w-8 h-8 md:w-10 md:h-10 bg-pink-50 text-pink-500 rounded-lg flex items-center justify-center shrink-0">
+             <DollarSign className="w-5 h-5" />
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 flex-1">
+        
+        {/* Left Column */}
+        <div className="flex flex-col gap-4">
+           {/* Produtos Mais Vendidos */}
+           <div className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm flex-1">
+              <div className="flex items-center gap-2 mb-4">
+                 <ShoppingCart className="w-4 h-4 text-zinc-400" />
+                 <h2 className="text-sm font-bold text-zinc-800">Produtos Mais Vendidos</h2>
+              </div>
+              <div className="space-y-2">
+                 {[
+                    { name: 'Açaí esperança 300 ml', qty: '4 un' },
+                    { name: 'Açaí Esperança 500 ml', qty: '4 un' },
+                    { name: 'Sorvete Pote 2 l tradicional', qty: '3 un' },
+                    { name: 'Cobertura 1,300 G sabores', qty: '3 un' },
+                    { name: 'Milkshake 300 ml', qty: '3 un' },
+                 ].map((item, i) => (
+                    <div key={i} className="flex justify-between items-center bg-[#fafafa] p-2.5 rounded-lg border border-zinc-100">
+                       <span className="text-[11px] md:text-xs text-zinc-700">{item.name}</span>
+                       <span className="text-[#6610f2] font-semibold bg-[#6610f2]/10 px-2 py-0.5 rounded text-[10px]">{item.qty}</span>
+                    </div>
+                 ))}
+              </div>
+           </div>
+           
+           {/* Produtos com Maior Margem */}
+           <div className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm flex-1">
+              <div className="flex items-center gap-2 mb-4">
+                 <h2 className="text-sm font-bold text-zinc-800">Produtos com Maior Margem</h2>
+              </div>
+              <div className="space-y-2">
+                 {[
+                    { name: 'Milkshake 300 ml', val: '57.5%' },
+                    { name: 'Açai Gratidão 300 ml', val: '49.9%' }
+                 ].map((item, i) => (
+                    <div key={i} className="flex justify-between items-center bg-[#fafafa] p-2.5 rounded-lg border border-zinc-100">
+                       <span className="text-[11px] md:text-xs text-zinc-700">{item.name}</span>
+                       <span className="text-green-600 font-bold text-xs">{item.val}</span>
+                    </div>
+                 ))}
+              </div>
+           </div>
+        </div>
+
+        {/* Right Column */}
+        <div className="flex flex-col gap-4">
+           {/* Estoque Baixo */}
+           <div className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm flex-1">
+              <div className="flex items-center gap-2 mb-4 border-b border-zinc-100 pb-3">
+                 <AlertTriangle className="w-4 h-4 text-red-500" />
+                 <h2 className="text-sm font-bold text-zinc-800">Estoque Baixo</h2>
+              </div>
+              <div className="space-y-2">
+                 {[
+                    { name: 'Mousse de maracuja', qtd: '0 g', min: '0 g' },
+                    { name: 'sacola', qtd: '-50 un', min: '0 un' },
+                    { name: 'copo 300 ml', qtd: '-16 un', min: '0 un' },
+                    { name: 'creme avelã', qtd: '-128 g', min: '0 g' },
+                    { name: 'creme de ovomaltine', qtd: '0 g', min: '0 g' }
+                 ].map((item, i) => (
+                    <div key={i} className="flex justify-between items-center bg-red-50/40 p-2.5 rounded-lg border border-red-100/50">
+                       <span className="text-[11px] md:text-xs text-zinc-700">{item.name}</span>
+                       <div className="flex items-center gap-3">
+                          <span className="text-red-600 font-bold text-[10px] md:text-[11px]">Atual: {item.qtd}</span>
+                          <span className="text-zinc-400 text-[10px] md:text-[11px]">Mín: {item.min}</span>
+                       </div>
+                    </div>
+                 ))}
+              </div>
+           </div>
+
+           {/* Insumos Mais Utilizados */}
+           <div className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm flex-1">
+              <div className="flex items-center gap-2 mb-4">
+                 <h2 className="text-sm font-bold text-zinc-800">Insumos Mais Utilizados</h2>
+              </div>
+              <div className="space-y-2">
+                 {[
+                    { name: 'sacola', usage: 'Usado em 18 cardápio(s)' },
+                    { name: 'Leite em pó', usage: 'Usado em 17 cardápio(s)' }
+                 ].map((item, i) => (
+                    <div key={i} className="flex justify-between items-center bg-[#fafafa] p-2.5 rounded-lg border border-zinc-100">
+                       <span className="text-[11px] md:text-xs text-zinc-700">{item.name}</span>
+                       <span className="text-[#6610f2]/80 bg-[#6610f2]/10 px-2 py-0.5 rounded text-[10px]">{item.usage}</span>
+                    </div>
+                 ))}
+              </div>
+           </div>
+        </div>
+
+      </div>
+    </div>
+  </motion.div>
+);
 
 export default function App() {
   return (
@@ -102,27 +313,9 @@ export default function App() {
             </div>
           </motion.div>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="w-full relative mt-12 md:mt-16 mb-8 md:mb-12 flex flex-col items-center"
-          >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-display mb-6 md:mb-8 text-center tracking-tight text-white drop-shadow-md">
-              Veja o Gestão Mix funcionando na prática
-            </h2>
-            
-            <div className="w-full max-w-[900px] aspect-video rounded-2xl md:rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(139,92,246,0.2)] bg-black/50 mb-6 relative z-20">
-              <iframe 
-                src="https://www.youtube.com/embed/3KzR4O3OAzk" 
-                title="Veja o Gestão Mix funcionando na prática" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen
-                className="w-full h-full"
-              ></iframe>
-            </div>
-          </motion.div>
+          <div className="w-full relative mt-4 mb-8" style={{ perspective: 1000 }}>
+            <SystemMockupGraphic />
+          </div>
           
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
