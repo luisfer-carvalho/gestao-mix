@@ -122,10 +122,6 @@ export default function App() {
                 className="w-full h-full"
               ></iframe>
             </div>
-            
-            <p className="text-zinc-400 text-sm md:text-base max-w-2xl text-center leading-relaxed">
-              Em poucos minutos veja como controlar estoque, precificar corretamente seus produtos e acompanhar o lucro real da sua operação.
-            </p>
           </motion.div>
           
           <motion.div 
