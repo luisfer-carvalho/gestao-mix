@@ -355,11 +355,9 @@ export default function App() {
             className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 w-full"
           >
             <a 
-              href="#oferta"
-              onClick={(e) => {
-                e.preventDefault();
-                document.querySelector('#oferta')?.scrollIntoView({ behavior: 'smooth' });
-              }}
+              href="https://pay.hotmart.com/A106056595I?checkoutMode=10"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4.5 rounded-full bg-gradient-to-r from-gold-light via-gold to-gold-dark text-black font-extrabold text-lg text-center shadow-[0_0_30px_rgba(255,215,0,0.4)] hover:shadow-[0_0_40px_rgba(255,215,0,0.6)] hover:scale-105 transition-all outline-none"
             >
               QUERO CONTROLAR MEU NEGÓCIO
@@ -425,11 +423,9 @@ export default function App() {
           
           <div className="mt-12 flex justify-center">
             <a 
-              href="#oferta"
-              onClick={(e) => {
-                e.preventDefault();
-                document.querySelector('#oferta')?.scrollIntoView({ behavior: 'smooth' });
-              }}
+              href="https://pay.hotmart.com/A106056595I?checkoutMode=10"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 w-full sm:w-auto rounded-full bg-white text-black font-extrabold text-base md:text-lg text-center hover:bg-zinc-200 transition-colors shadow-lg"
             >
               LIBERAR MEU ACESSO AGORA
@@ -743,17 +739,17 @@ export default function App() {
                     Tudo o que você precisa para controlar sua açaiteria ou sorveteria em um único sistema.
                   </p>
                   
-                  <div className="flex items-end justify-center gap-1.5 md:gap-2 text-white mb-6">
+                  <div className="flex items-end justify-center gap-1.5 md:gap-2 text-white mb-2">
                     <span className="text-2xl md:text-3xl font-display font-bold pb-2 md:pb-4 text-zinc-400">R$</span>
                     <span className="text-6xl md:text-[5.5rem] leading-none font-black font-display tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-zinc-300">49,90</span>
                     <span className="text-lg md:text-xl text-zinc-400 font-bold pb-2 md:pb-4 uppercase">/ Mês</span>
                   </div>
+                  <p className="text-zinc-400 text-sm mb-6 text-center font-medium">Sem fidelidade. Cancele quando quiser.</p>
                   
                   <div className="mb-8 w-full flex flex-col gap-3 text-sm md:text-base text-zinc-300 text-left px-2 sm:px-6">
-                    <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> <span className="font-medium">Sem fidelidade</span></div>
-                    <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> <span className="font-medium">Cancele quando quiser</span></div>
-                    <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> <span className="font-medium">Atualizações inclusas</span></div>
-                    <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> <span className="font-medium">Suporte incluso</span></div>
+                    <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> <span className="font-medium">Atualizações constantes incluídas.</span></div>
+                    <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> <span className="font-medium">Novas funcionalidades sem custo adicional.</span></div>
+                    <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> <span className="font-medium">Suporte especializado incluso.</span></div>
                   </div>
                   
                   <a href="https://pay.hotmart.com/A106056595I?checkoutMode=10" target="_blank" rel="noopener noreferrer" className="w-full px-4 py-4 rounded-2xl bg-gradient-to-r from-gold-light via-gold to-gold-dark text-black shadow-[0_10px_30px_rgba(255,215,0,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all flex flex-col items-center justify-center">
@@ -803,8 +799,27 @@ export default function App() {
         </div>
       </section>
 
+      {/* WhatsApp Doubts Section */}
+      <section className="py-16 relative z-10 px-6 bg-black/40">
+        <div className="container mx-auto max-w-3xl text-center">
+          <h2 className="text-2xl md:text-3xl font-bold font-display mb-4">Ainda tem dúvidas?</h2>
+          <p className="text-zinc-400 mb-8 max-w-xl mx-auto text-sm md:text-base">
+            Nossa equipe está pronta para mostrar como o Gestão Mix pode ajudar você a controlar custos, estoque e lucro da sua operação.
+          </p>
+          <a
+            href="https://wa.me/5531998162792?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20o%20sistema%20Gest%C3%A3o%20Mix."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#25D366] text-white font-bold text-sm md:text-base hover:bg-[#20bd5a] transition-colors shadow-[0_0_20px_rgba(37,211,102,0.2)] hover:shadow-[0_0_30px_rgba(37,211,102,0.4)]"
+          >
+            <MessageCircle className="w-5 h-5" />
+            FALAR NO WHATSAPP
+          </a>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer className="border-t border-white/5 py-10 mt-10 relative z-10">
+      <footer className="border-t border-white/5 py-10 relative z-10">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
             <IceCream2 className="text-zinc-600 w-5 h-5 -rotate-6" />
@@ -825,19 +840,6 @@ export default function App() {
         </div>
       </footer>
       </div>
-
-      {/* WhatsApp Floating Button */}
-      <a
-        href="https://wa.me/5531998162792?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20o%20sistema%20Gest%C3%A3o%20Mix."
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-24 right-4 md:bottom-8 md:right-8 bg-[#25D366] text-white p-3 md:p-4 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:scale-110 hover:shadow-[0_0_30px_rgba(37,211,102,0.6)] transition-all z-[9999] flex items-center justify-center cursor-pointer group"
-        aria-label="Fale conosco no WhatsApp"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 md:w-8 md:h-8">
-          <path d="M12.004 0C5.378 0 0 5.378 0 12.004c0 2.115.553 4.148 1.603 5.952L.373 22l4.167-1.1c1.734.965 3.655 1.474 5.464 1.474 6.626 0 12.004-5.378 12.004-12.004S18.63 0 12.004 0zm0 21c-1.637 0-3.238-.42-4.664-1.22l-.332-.196-3.275.86.877-3.18-.216-.34A9.957 9.957 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10zm5.405-7.393c-.296-.148-1.754-.866-2.025-.965-.27-.099-.469-.148-.667.148-.197.297-.765.965-.938 1.163-.173.198-.346.223-.642.074-.296-.148-1.25-.46-2.383-1.468-.88-.785-1.475-1.753-1.648-2.05-.173-.297-.018-.458.13-.606.134-.133.296-.346.444-.52.148-.173.198-.297.296-.495.099-.198.05-.371-.024-.52-.074-.148-.667-1.608-.915-2.203-.242-.578-.487-.5-.667-.508-.173-.008-.371-.008-.569-.008-.198 0-.52.074-.791.371-.27.297-1.038 1.015-1.038 2.476s1.063 2.87 1.211 3.068c.148.198 2.091 3.193 5.066 4.478.708.307 1.261.49 1.694.627.711.226 1.36.194 1.872.118.574-.085 1.754-.717 2.001-1.411.247-.693.247-1.288.173-1.411-.074-.124-.271-.198-.568-.347z"/>
-        </svg>
-      </a>
 
     </>
   );
