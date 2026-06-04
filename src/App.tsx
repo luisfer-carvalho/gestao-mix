@@ -27,9 +27,40 @@ import {
   CircleDollarSign,
   User,
   ChevronDown,
-  DollarSign
+  DollarSign,
+  MessageCircle,
+  Plus,
+  Minus
 } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
+import { useState } from 'react';
+
+const FaqItem = ({ question, answer }: { question: string, answer: string }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="border-b border-white/10 last:border-0">
+      <button 
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full py-5 flex items-center justify-between text-left focus:outline-none"
+      >
+        <span className="font-bold text-lg text-zinc-200">{question}</span>
+        {isOpen ? <Minus className="w-5 h-5 text-electric-purple shrink-0" /> : <Plus className="w-5 h-5 text-gold shrink-0" />}
+      </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="overflow-hidden"
+          >
+            <p className="pb-5 text-zinc-400 text-sm md:text-base leading-relaxed">{answer}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 const SystemMockupGraphic = () => (
   <motion.div 
@@ -336,7 +367,7 @@ export default function App() {
           </motion.div>
         </div>
       </section>
-
+      
       {/* Features Grid Section */}
       <section className="bg-dark-card/80 py-16 md:py-24 relative overflow-hidden backdrop-blur-sm border-y border-white/5">
         <div className="container mx-auto px-6 relative z-10">
@@ -390,6 +421,19 @@ export default function App() {
               <h3 className="text-lg font-bold mb-2">App no Celular (PWA)</h3>
               <p className="text-zinc-400 text-sm leading-relaxed">Acompanhe vendas, estoque e resultados diretamente do celular em tempo real.</p>
             </div>
+          </div>
+          
+          <div className="mt-12 flex justify-center">
+            <a 
+              href="#oferta"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#oferta')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="px-8 py-4 w-full sm:w-auto rounded-full bg-white text-black font-extrabold text-base md:text-lg text-center hover:bg-zinc-200 transition-colors shadow-lg"
+            >
+              LIBERAR MEU ACESSO AGORA
+            </a>
           </div>
         </div>
       </section>
@@ -730,8 +774,37 @@ export default function App() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-16 md:py-24 relative z-10 px-6 bg-black/40 border-t border-white/5">
+        <div className="container mx-auto max-w-3xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold font-display mb-4">Perguntas Frequentes</h2>
+            <p className="text-zinc-400">Tire suas dúvidas e veja como é fácil começar.</p>
+          </div>
+          
+          <div className="bg-dark-card border border-white/10 rounded-3xl p-6 md:p-8 shadow-xl">
+            <FaqItem 
+              question="Preciso de um computador bom para rodar?" 
+              answer="Não! O Gestão Mix roda direto no navegador (nuvem). Você pode usar em qualquer PC básico, notebook, tablet ou até mesmo pelo celular. Não exige instalação pesada." 
+            />
+            <FaqItem 
+              question="É difícil de usar? Preciso dar treinamento pra equipe?" 
+              answer="O sistema foi desenhado para ser totalmente intuitivo (como usar um aplicativo de celular). Em menos de 30 minutos você cadastra seus primeiros produtos e os operadores já conseguem lançar vendas sem complicação." 
+            />
+            <FaqItem 
+              question="E se eu não gostar ou não me adaptar?" 
+              answer="Você tem 7 dias de garantia incondicional. Se achar que o sistema não é para você, basta solicitar o reembolso na Hotmart com um clique e devolvemos 100% do seu dinheiro, sem ressentimentos." 
+            />
+            <FaqItem 
+              question="Possui integração direta com iFood?" 
+              answer="Neste plano, oferecemos a ferramenta de gestão de taxas e precificação para iFood. Isso garante que você lance as vendas de forma inteligente para controlar estoques e identificar exatamente quanto o iFood te cobra, protegendo seu lucro." 
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer className="border-t border-white/5 py-10 mt-10">
+      <footer className="border-t border-white/5 py-10 mt-10 relative z-10">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
             <IceCream2 className="text-zinc-600 w-5 h-5 -rotate-6" />
