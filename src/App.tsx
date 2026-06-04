@@ -279,9 +279,8 @@ export default function App() {
   return (
     <>
       <div className="min-h-screen bg-deep-purple text-white overflow-x-hidden relative selection:bg-electric-purple selection:text-white font-sans">
-        {/* Decorative Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-[300px] md:h-[500px] bg-electric-purple/20 blur-[80px] md:blur-[120px] rounded-full -translate-y-1/2 opacity-50 pointer-events-none" />
-      <div className="absolute top-1/3 right-0 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-gold/10 blur-[80px] md:blur-[100px] rounded-full translate-x-1/3 opacity-40 pointer-events-none" />
+        {/* Decorative Background Elements Simple */}
+      <div className="absolute top-0 left-0 w-full h-[300px] md:h-[500px] bg-electric-purple/5 rounded-full -translate-y-1/2 opacity-30 pointer-events-none" />
 
       {/* Header / Nav */}
       <header className="container mx-auto px-6 py-4 md:py-6 flex justify-center items-center relative z-10">
@@ -355,9 +354,11 @@ export default function App() {
             className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 w-full"
           >
             <a 
-              href="https://pay.hotmart.com/A106056595I?checkoutMode=10"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#oferta"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#oferta')?.scrollIntoView({ behavior: 'smooth' });
+              }}
               className="w-full sm:w-auto px-8 py-4.5 rounded-full bg-gradient-to-r from-gold-light via-gold to-gold-dark text-black font-extrabold text-lg text-center shadow-[0_0_30px_rgba(255,215,0,0.4)] hover:shadow-[0_0_40px_rgba(255,215,0,0.6)] hover:scale-105 transition-all outline-none"
             >
               QUERO CONTROLAR MEU NEGÓCIO
@@ -611,7 +612,6 @@ export default function App() {
           </div>
 
           <div className="max-w-4xl mx-auto bg-gradient-to-r from-[#12001e] to-deep-purple/50 border border-electric-purple/30 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 justify-between text-center md:text-left relative overflow-hidden">
-            <div className="absolute inset-0 bg-electric-purple/5 blur-[100px]"></div>
             <div className="relative z-10 flex-1">
               <h3 className="text-2xl md:text-3xl font-display font-bold mb-3">
                 Um único produto corrigido pode pagar a <span className="text-electric-purple">mensalidade do sistema.</span>
@@ -688,13 +688,27 @@ export default function App() {
         </div>
       </section>
 
+      {/* Pre-Offer Clarification Section */}
+      <section className="py-16 md:py-24 relative z-10 px-6">
+        <div className="container mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">Você vende ou <span className="text-electric-purple">realmente lucra?</span></h2>
+          <p className="text-zinc-400 text-lg md:text-xl mb-4 font-medium">
+            Faturamento não é lucro.
+          </p>
+          <p className="text-zinc-400 text-base md:text-lg mb-8 leading-relaxed max-w-2xl mx-auto">
+            Sem controle de custos, estoque e margem, muitos negócios vendem todos os dias sem saber quanto realmente sobra no final do mês.
+          </p>
+          <p className="text-zinc-200 text-lg md:text-xl font-bold bg-white/5 inline-block px-6 py-3 rounded-xl border border-white/10">
+            O Gestão Mix foi criado para acabar com essa dúvida.
+          </p>
+        </div>
+      </section>
+
       {/* Offer Section */}
       <section id="oferta" className="py-16 md:py-24 relative z-10 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto rounded-[2rem] md:rounded-[3rem] bg-dark-card border border-gold/50 shadow-[0_0_40px_rgba(255,215,0,0.1)] md:shadow-[0_0_80px_rgba(255,215,0,0.15)] relative p-1 md:p-1.5 group">
-          {/* Animated Gradient Border effect */}
-          <div className="absolute inset-0 rounded-[2rem] md:rounded-[3rem] bg-gradient-to-r from-gold via-electric-purple to-gold opacity-40 blur-md group-hover:opacity-70 transition-opacity duration-500"></div>
-          
-          <div className="bg-deep-purple/95 backdrop-blur-2xl rounded-[1.85rem] md:rounded-[2.85rem] px-6 py-12 md:p-16 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+          {/* Offer Card Content */}
+          <div className="bg-deep-purple/95 backdrop-blur-2xl rounded-[1.85rem] md:rounded-[2.85rem] px-6 py-12 md:p-16 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12 border-2 border-gold/40">
             
             {/* Context/Texts */}
             <div className="md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
@@ -703,26 +717,29 @@ export default function App() {
               </span>
               
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 drop-shadow-md leading-[1.1]">
-                O melhor sistema, <br className="hidden md:block"/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200">agora em assinatura acessível</span>
+                Pare de perder dinheiro <br className="hidden md:block"/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200">sem perceber.</span>
               </h2>
               
               <p className="text-zinc-400 mb-8 max-w-md text-sm md:text-base leading-relaxed">
-                Pare de perder o controle do seu negócio. Assine o Gestão Mix e tenha acesso a todas as ferramentas profissionais que você precisa para lucrar mais.
+                O Gestão Mix mostra exatamente quanto você lucra em cada produto vendido, controla seu estoque, acompanha seus custos e ajuda você a tomar decisões com base em números reais.
               </p>
               
-              <div className="space-y-4 md:space-y-5 w-full max-w-sm">
+              <div className="space-y-4 md:space-y-5 w-full">
                 {[
-                  'Acesso Ilimitado a Todas Ferramentas',
-                  'Frente de Caixa (PDV) Prático e Rápido',
-                  'Calculadora de Lucro e Monitor iFood',
-                  'Atualizações e Novas Funcionalidades',
+                  'Saiba exatamente quanto você ganha em cada venda',
+                  'Descubra quais produtos geram mais lucro',
+                  'Controle estoque e desperdícios automaticamente',
+                  'Frente de caixa rápida e simples',
+                  'Monitor de custos e margem em tempo real',
+                  'Atualizações constantes incluídas',
+                  'Suporte especializado',
                 ].map((benefit, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-electric-purple/20 flex items-center justify-center shrink-0">
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-electric-purple/20 flex items-center justify-center shrink-0 mt-0.5">
                       <CheckCircle2 className="w-3.5 h-3.5 md:w-4 md:h-4 text-electric-purple" />
                     </div>
-                    <span className="text-zinc-200 text-sm md:text-base font-medium">{benefit}</span>
+                    <span className="text-zinc-200 text-sm md:text-base font-medium text-left">{benefit}</span>
                   </div>
                 ))}
               </div>
@@ -730,39 +747,43 @@ export default function App() {
             
             {/* Pricing Box */}
             <div className="md:w-[45%] w-full bg-black/40 border border-white/10 rounded-3xl p-6 md:p-10 flex flex-col items-center shadow-2xl relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 blur-[50px]"></div>
-               <div className="absolute bottom-0 left-0 w-32 h-32 bg-electric-purple/15 blur-[50px]"></div>
-               
                <div className="relative z-10 w-full flex flex-col items-center">
-                  <h3 className="text-xl md:text-2xl font-black text-white mb-2 text-center tracking-tight">ACESSO COMPLETO AO GESTÃO MIX</h3>
-                  <p className="text-zinc-400 text-sm md:text-base mb-6 text-center max-w-sm">
-                    Tudo o que você precisa para controlar sua açaiteria ou sorveteria em um único sistema.
-                  </p>
+                  
+                  {/* Highlight Block Above Price */}
+                  <div className="bg-red-500/10 border border-red-500/30 rounded-2xl p-4 mb-6 text-center w-full shadow-[0_0_15px_rgba(239,68,68,0.1)]">
+                     <h4 className="text-red-400 font-bold mb-2 text-sm md:text-base">Um único produto precificado errado pode custar mais do que a mensalidade do sistema.</h4>
+                     <p className="text-zinc-400 text-xs text-left mb-3">Muitos donos de açaiteria acreditam que estão lucrando porque vendem bastante. Mas pequenas diferenças na margem podem consumir centenas de reais por mês sem serem percebidas.</p>
+                     <p className="text-white text-xs text-left font-bold border-t border-red-500/20 pt-3">O Gestão Mix mostra o custo real, a <span className="text-gold">margem real</span> e o lucro real de cada produto.</p>
+                  </div>
+
+                  <div className="w-full bg-electric-purple/10 border border-electric-purple/30 rounded-xl p-3 mb-8">
+                     <p className="text-white font-bold text-center text-sm md:text-base leading-tight">
+                        "Corrigir apenas <span className="text-gold">um produto</span> com margem errada já pode pagar a mensalidade do Gestão Mix."
+                     </p>
+                  </div>
                   
                   <div className="flex items-end justify-center gap-1.5 md:gap-2 text-white mb-2">
                     <span className="text-2xl md:text-3xl font-display font-bold pb-2 md:pb-4 text-zinc-400">R$</span>
                     <span className="text-6xl md:text-[5.5rem] leading-none font-black font-display tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-zinc-300">49,90</span>
                     <span className="text-lg md:text-xl text-zinc-400 font-bold pb-2 md:pb-4 uppercase">/ Mês</span>
                   </div>
-                  <p className="text-zinc-400 text-sm mb-6 text-center font-medium">Sem fidelidade. Cancele quando quiser.</p>
                   
                   <div className="mb-8 w-full flex flex-col gap-3 text-sm md:text-base text-zinc-300 text-left px-2 sm:px-6">
-                    <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> <span className="font-medium">Atualizações constantes incluídas.</span></div>
-                    <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> <span className="font-medium">Novas funcionalidades sem custo adicional.</span></div>
-                    <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> <span className="font-medium">Suporte especializado incluso.</span></div>
+                    <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> <span className="font-medium">Sem fidelidade</span></div>
+                    <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> <span className="font-medium">Cancele quando quiser</span></div>
+                    <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> <span className="font-medium">Atualizações inclusas</span></div>
+                    <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> <span className="font-medium">Suporte incluso</span></div>
                   </div>
                   
                   <a href="https://pay.hotmart.com/A106056595I?checkoutMode=10" target="_blank" rel="noopener noreferrer" className="w-full px-4 py-4 rounded-2xl bg-gradient-to-r from-gold-light via-gold to-gold-dark text-black shadow-[0_10px_30px_rgba(255,215,0,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all flex flex-col items-center justify-center">
                     <span className="font-black text-xl md:text-2xl uppercase tracking-wide drop-shadow-sm">Começar Agora</span>
-                    <span className="text-xs font-bold opacity-80 mt-1">Acesso imediato após confirmação da assinatura.</span>
+                    <span className="text-xs font-bold opacity-80 mt-1">Acesso imediato após confirmação.</span>
                   </a>
                   
                   <div className="mt-6 flex flex-col items-center justify-center gap-2 text-xs md:text-sm text-zinc-400 w-full bg-white/5 p-4 rounded-xl border border-white/10">
                     <div className="flex items-center gap-2 font-bold text-white text-sm md:text-base"><ShieldCheck className="w-5 h-5 text-electric-purple" /> GARANTIA DE 7 DIAS</div>
                     <span className="text-center font-medium leading-relaxed">Teste sem risco. Se não gostar, solicite o reembolso dentro do prazo da plataforma.</span>
                   </div>
-                  
-                  <p className="mt-5 text-xs text-zinc-400 font-medium text-center">Assine agora e comece a controlar seu lucro hoje mesmo</p>
                </div>
             </div>
 
