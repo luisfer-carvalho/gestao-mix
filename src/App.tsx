@@ -7,6 +7,7 @@ import {
   IceCream2,
   Smartphone,
   TrendingUp,
+  TrendingDown,
   PieChart,
   ClipboardList,
   Monitor,
@@ -29,7 +30,6 @@ import {
   DollarSign
 } from 'lucide-react';
 import { motion } from 'motion/react';
-import { SalesNotification } from './components/SalesNotification';
 
 const SystemMockupGraphic = () => (
   <motion.div 
@@ -527,6 +527,67 @@ export default function App() {
         </div>
       </section>
 
+      {/* Cost of not having control */}
+      <section className="py-16 md:py-24 relative z-10 px-6">
+        <div className="container mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-4">
+              Quanto custa <span className="text-red-500">não ter controle</span> da sua operação?
+            </h2>
+            <p className="text-zinc-400 text-base md:text-lg">
+              Muitos donos de açaiteria acreditam que estão lucrando porque vendem bastante. O problema é que faturamento não significa lucro.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto mb-12 md:mb-16">
+            {[
+              {
+                title: 'Precificação errada',
+                text: 'Uma diferença de apenas R$1 por produto pode representar centenas de reais perdidos no final do mês.',
+                icon: Calculator
+              },
+              {
+                title: 'Estoque sem controle',
+                text: 'Ingredientes desaparecem, vencem ou são utilizados sem registro, reduzindo sua margem sem que você perceba.',
+                icon: Box
+              },
+              {
+                title: 'Taxas ignoradas',
+                text: 'iFood, embalagens, entregas e custos operacionais podem consumir boa parte do lucro.',
+                icon: PieChart
+              },
+              {
+                title: 'Decisões no achismo',
+                text: 'Sem números reais, fica impossível saber quais produtos realmente geram lucro.',
+                icon: TrendingDown
+              }
+            ].map((card, idx) => (
+              <div key={idx} className="bg-[#12001e] border border-white/10 rounded-2xl p-6 flex flex-col items-start text-left hover:border-red-500/30 transition-all">
+                <card.icon className="w-8 h-8 text-red-500 mb-4" />
+                <h3 className="text-lg font-bold mb-2 text-white">{card.title}</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">{card.text}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="max-w-4xl mx-auto bg-gradient-to-r from-[#12001e] to-deep-purple/50 border border-electric-purple/30 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 justify-between text-center md:text-left relative overflow-hidden">
+            <div className="absolute inset-0 bg-electric-purple/5 blur-[100px]"></div>
+            <div className="relative z-10 flex-1">
+              <h3 className="text-2xl md:text-3xl font-display font-bold mb-3">
+                Um único produto corrigido pode pagar a <span className="text-electric-purple">mensalidade do sistema.</span>
+              </h3>
+              <p className="text-zinc-300 text-sm md:text-base leading-relaxed">
+                O Gestão Mix calcula automaticamente custos, margem, estoque e lucro para que você tome decisões baseadas em números reais.
+              </p>
+            </div>
+            <div className="relative z-10 shrink-0 bg-black/40 border border-white/10 rounded-2xl p-5 text-center shadow-lg">
+              <span className="block text-gold font-bold text-xl md:text-2xl mb-1">Menos de R$1,70</span>
+              <span className="block text-zinc-400 text-xs md:text-sm uppercase tracking-wider font-semibold">por dia para controlar <br/>toda sua operação.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="py-16 md:py-24 relative z-10 px-6 bg-dark-card/30">
         <div className="container mx-auto">
@@ -602,7 +663,7 @@ export default function App() {
               </span>
               
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 drop-shadow-md leading-[1.1]">
-                O melhor sistema,<br className="hidden md:block"/>
+                O melhor sistema, <br className="hidden md:block"/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200">agora em assinatura acessível</span>
               </h2>
               
@@ -705,8 +766,6 @@ export default function App() {
         </svg>
       </a>
 
-      {/* Sales Notifications */}
-      <SalesNotification />
     </>
   );
 }
