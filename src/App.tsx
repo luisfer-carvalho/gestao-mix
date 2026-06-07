@@ -295,25 +295,17 @@ export default function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-6 pt-12 pb-20 md:pt-24 md:pb-32 relative z-10 flex flex-col items-center">
-        <div className="flex flex-col text-center space-y-6 md:space-y-8 max-w-5xl mx-auto w-full items-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-electric-purple/10 border border-electric-purple/30 text-electric-purple text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-wider mb-2"
-          >
-            <Store className="w-3.5 h-3.5 md:w-4 md:h-4" />
-            <span>OPERAÇÃO PROFISSIONAL E LUCRATIVA</span>
-          </motion.div>
+      <section className="container mx-auto px-6 pt-8 pb-16 md:pt-12 md:pb-24 relative z-10 flex flex-col items-center">
+        <div className="flex flex-col text-center space-y-5 md:space-y-6 max-w-4xl mx-auto w-full items-center">
           
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-[1.15] md:leading-[1.1] tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-[1.15] md:leading-[1.1] tracking-tight uppercase"
           >
-            <span className="text-gold block mb-1 md:mb-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Dono de Açaiteria ou Sorveteria:</span> Você sabe exatamente quanto do seu faturamento <span className="text-electric-purple">realmente vira lucro</span> no fim do mês?
+            <span className="text-gold text-3xl sm:text-4xl md:text-5xl lg:text-6xl block mb-2 md:mb-3">Dono de Açaiteria e Sorveteria:</span>
+            VOCÊ SABE QUANTO <span className="text-electric-purple text-transparent bg-clip-text bg-gradient-to-r from-electric-purple to-purple-400">REALMENTE LUCRA</span> EM CADA COPO DE AÇAÍ?
           </motion.h1>
           
           <motion.div 
@@ -322,35 +314,32 @@ export default function App() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex flex-col items-center max-w-3xl mx-auto mb-4 space-y-6"
           >
-            <p className="text-base sm:text-lg md:text-xl text-zinc-300 font-normal leading-relaxed">
-              O Gestão Mix foi criado para açaiterias e sorveterias que precisam parar de vender no escuro.<br className="hidden md:block" />
-              Descubra o custo REAL de cada montagem, calcule automaticamente as taxas do iFood, controle estoque, pedidos e saiba exatamente quanto sobra no seu bolso em cada venda.
+            <p className="text-base sm:text-lg md:text-xl text-zinc-300 font-medium leading-relaxed max-w-2xl">
+              Descubra automaticamente seus custos, margem de lucro, estoque e pedidos em um único sistema.
             </p>
-            
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 w-full">
-              {[
-                'Precificação Inteligente',
-                'Controle Real de Lucro',
-                'Gestão Delivery iFood',
-                'Estoque Automático',
-                'PDV Rápido e Organizado'
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 md:px-4 md:py-2 rounded-full">
-                  <span className="text-gold font-bold">✔</span>
-                  <span className="text-xs md:text-sm font-semibold text-white tracking-wide">{item}</span>
-                </div>
-              ))}
-            </div>
           </motion.div>
 
-          <div className="w-full relative mt-4 mb-8" style={{ perspective: 1000 }}>
-            <SystemMockupGraphic />
-          </div>
-          
+          {/* Large Image Hero */}
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="w-full max-w-5xl relative mt-4 mb-8 flex items-center justify-center overflow-hidden group"
+          >
+            {/* Optional glow effect behind image */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-electric-purple/30 blur-[120px] rounded-full opacity-50"></div>
+            <img 
+              src="https://i.postimg.cc/SRs9vG95/Chat-GPT-Image-7-de-jun-de-2026-15-29-50.jpg" 
+              alt="Sistema Gestão Mix" 
+              className="relative z-10 w-full h-auto rounded-[2rem] shadow-[0_0_50px_rgba(139,92,246,0.2)] border border-white/10"
+              referrerPolicy="no-referrer"
+            />
+          </motion.div>
+
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 w-full"
           >
             <a 
@@ -361,268 +350,181 @@ export default function App() {
               }}
               className="w-full sm:w-auto px-8 py-4.5 rounded-full bg-gradient-to-r from-gold-light via-gold to-gold-dark text-black font-extrabold text-lg text-center shadow-[0_0_30px_rgba(255,215,0,0.4)] hover:shadow-[0_0_40px_rgba(255,215,0,0.6)] hover:scale-105 transition-all outline-none"
             >
-              QUERO CONTROLAR MEU NEGÓCIO
+              QUERO DESCOBRIR MEU LUCRO
             </a>
           </motion.div>
+
         </div>
       </section>
       
-      {/* Features Grid Section */}
-      <section className="bg-dark-card/80 py-16 md:py-24 relative overflow-hidden backdrop-blur-sm border-y border-white/5">
+      {/* SEÇÃO 2 - BENEFÍCIO PRINCIPAL */}
+      <section className="bg-[#12001e]/80 py-16 md:py-24 relative overflow-hidden backdrop-blur-sm border-y border-white/5">
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-4 md:mb-6">
-              Tudo o que você precisa para <span className="text-electric-purple">parar de perder dinheiro</span> na sua operação
-            </h2>
-            <p className="text-zinc-400 text-base md:text-lg">O Gestão Mix foi desenvolvido para profissionalizar açaiterias e sorveterias que precisam controlar custos, organizar pedidos e aumentar o lucro real da operação.</p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
-            <div className="bg-[#12001e] border border-white/10 rounded-2xl p-6 hover:border-gold/50 transition-all flex flex-col items-start text-left">
-              <Calculator className="w-8 h-8 text-gold mb-4" />
-              <h3 className="text-lg font-bold mb-2">Precificação Inteligente</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">Descubra exatamente quanto custa cada açaí, milk-shake ou montagem. O sistema calcula ingredientes, adicionais, embalagens, taxas e sua margem de lucro automaticamente.</p>
-            </div>
+          <div className="flex flex-col lg:flex-row items-center gap-12 md:gap-16 max-w-7xl mx-auto">
             
-            <div className="bg-[#12001e] border border-white/10 rounded-2xl p-6 hover:border-green-500/50 transition-all flex flex-col items-start text-left">
-              <Box className="w-8 h-8 text-green-500 mb-4" />
-              <h3 className="text-lg font-bold mb-2">Controle de Estoque Automático</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">Cada venda dá baixa automática nos insumos. Nunca mais descubra no meio do movimento que acabou Nutella, leite em pó ou morango.</p>
-            </div>
-
-            <div className="bg-[#12001e] border border-white/10 rounded-2xl p-6 hover:border-electric-purple/50 transition-all flex flex-col items-start text-left">
-              <Monitor className="w-8 h-8 text-electric-purple mb-4" />
-              <h3 className="text-lg font-bold mb-2">PDV Rápido e Organizado</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">Atenda clientes com agilidade no balcão, mesas e delivery sem travamentos, filas ou pedidos bagunçados.</p>
-            </div>
-            
-            <div className="bg-[#12001e] border border-white/10 rounded-2xl p-6 hover:border-orange-500/50 transition-all flex flex-col items-start text-left">
-              <Bike className="w-8 h-8 text-orange-500 mb-4" />
-              <h3 className="text-lg font-bold mb-2">Gestão Delivery e iFood</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">Saiba exatamente quanto cobrar no iFood considerando taxas, embalagens e margem de lucro para não vender no prejuízo.</p>
-            </div>
-
-            <div className="bg-[#12001e] border border-white/10 rounded-2xl p-6 hover:border-blue-500/50 transition-all flex flex-col items-start text-left">
-              <PieChart className="w-8 h-8 text-blue-500 mb-4" />
-              <h3 className="text-lg font-bold mb-2">Relatórios e Lucro Real</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">Veja faturamento, margem, produtos mais lucrativos e tenha clareza completa da saúde financeira da operação.</p>
-            </div>
-
-            <div className="bg-[#12001e] border border-white/10 rounded-2xl p-6 hover:border-red-500/50 transition-all flex flex-col items-start text-left">
-              <ClipboardList className="w-8 h-8 text-red-500 mb-4" />
-              <h3 className="text-lg font-bold mb-2">Produção Organizada</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">Pedidos enviados automaticamente para cozinha e montagem, evitando erros, gritaria e atrasos.</p>
-            </div>
-            
-            <div className="bg-[#12001e] border border-white/10 rounded-2xl p-6 hover:border-teal-400/50 transition-all flex flex-col items-start text-left relative overflow-hidden lg:col-span-3 sm:col-span-2 md:col-start-auto max-w-xl md:max-w-none mx-auto md:mx-0 w-full lg:w-1/3 mt-0 lg:mt-4 lg:mx-auto">
-               <div className="absolute top-0 right-0 p-2 bg-teal-500 text-white text-[9px] font-bold rounded-bl-lg">PWA</div>
-              <Smartphone className="w-8 h-8 text-teal-400 mb-4" />
-              <h3 className="text-lg font-bold mb-2">App no Celular (PWA)</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">Acompanhe vendas, estoque e resultados diretamente do celular em tempo real.</p>
-            </div>
-          </div>
-          
-          <div className="mt-12 flex justify-center">
-            <a 
-              href="https://pay.hotmart.com/A106056595I?checkoutMode=10"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 w-full sm:w-auto rounded-full bg-white text-black font-extrabold text-base md:text-lg text-center hover:bg-zinc-200 transition-colors shadow-lg"
-            >
-              LIBERAR MEU ACESSO AGORA
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Focus Area: Realidade da Sorveteria */}
-      <section className="py-16 md:py-24 bg-black/40 border-y border-white/5 relative z-10 px-6">
-        <div className="container mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold font-display mb-4 md:mb-6">
-              Feito para a realidade de <span className="text-electric-purple">Sorveterias e Açaiterias</span>
-            </h2>
-            <p className="text-zinc-400 text-base md:text-lg">Entendemos a operação e desenvolvemos soluções diretas para a desorganização e perda de dinheiro que os sistemas comuns ignoram.</p>
-          </div>
-
-          <div className="space-y-20 md:space-y-28">
-            {/* Example 1 */}
-            <div className="flex flex-col lg:flex-row items-center gap-10 md:gap-14">
-              <div className="lg:w-1/2 w-full text-center lg:text-left">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs md:text-sm font-bold mb-4 uppercase tracking-wider">
-                  <Calculator className="w-4 h-4" /> Adeus Prejuízos Ocultos
-                </div>
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold font-display mb-4 md:mb-5">Controle o desperdício e a precificação</h3>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6 md:mb-8 font-medium">
-                  Não permita que o excesso de Nutella roube seu lucro. Calcule precisamente o custo de montagem fracionada (por kilo ou ML), inclua as taxas do iFood e descubra sua verdadeira margem de lucro em cada pedido.
-                </p>
-                <div className="flex flex-col gap-3 md:gap-4 justify-center lg:justify-start items-center lg:items-start text-sm md:text-base">
-                  <div className="flex items-center gap-3 text-zinc-200 bg-white/5 w-full md:w-auto px-4 py-2.5 rounded-xl border border-white/5">
-                    <CheckCircle2 className="w-5 h-5 text-electric-purple shrink-0" /> Fórmulas baseadas em rendimento real
-                  </div>
-                  <div className="flex items-center gap-3 text-zinc-200 bg-white/5 w-full md:w-auto px-4 py-2.5 rounded-xl border border-white/5">
-                    <CheckCircle2 className="w-5 h-5 text-electric-purple shrink-0" /> Baixa imediata de complementos no estoque
-                  </div>
-                </div>
-              </div>
-              <div className="lg:w-1/2 w-full">
-                 <div className="bg-dark-card border border-white/10 rounded-2xl p-6 shadow-2xl relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-gold/10 to-transparent pointer-events-none"></div>
-                    <div className="relative z-10">
-                      <h4 className="font-bold text-white mb-4 border-b border-white/10 pb-2 flex items-center gap-2"><PieChart className="w-4 h-4 text-zinc-400" /> Relatório de Custo: Taça Sensação</h4>
-                      <div className="space-y-3">
-                        <div className="flex justify-between items-center text-sm bg-white/5 p-3 rounded-lg border-l-4 border-electric-purple">
-                           <span className="text-zinc-300 font-medium">Açaí Premium (500g)</span>
-                           <span className="font-mono text-zinc-400">R$ 5,20</span>
-                        </div>
-                        <div className="flex justify-between items-center text-sm bg-white/5 p-3 rounded-lg border-l-4 border-zinc-600">
-                           <span className="text-zinc-300">Morango Fresco (100g)</span>
-                           <span className="font-mono text-zinc-400">R$ 1,80</span>
-                        </div>
-                        <div className="flex justify-between items-center text-sm bg-white/5 p-3 rounded-lg border-l-4 border-zinc-600">
-                           <span className="text-zinc-300">Creme de Avelã (50g)</span>
-                           <span className="font-mono text-zinc-400">R$ 3,10</span>
-                        </div>
-                        <div className="flex justify-between items-center pt-3 border-t border-white/10 mt-2">
-                           <span className="font-bold text-white">Custo Total de Insumos:</span>
-                           <span className="font-bold text-red-400 text-lg">R$ 10,10</span>
-                        </div>
-                        <div className="flex justify-between items-center bg-black/30 p-2 rounded mt-1">
-                           <span className="text-sm font-medium text-zinc-400">+ Tributos e Embalagem:</span>
-                           <span className="font-bold text-red-300 text-sm">R$ 2,50</span>
-                        </div>
-                        <div className="flex justify-between items-center pt-2">
-                           <span className="font-bold text-white">Preço de Venda Sugerido:</span>
-                           <span className="font-bold text-green-400 text-xl font-display">R$ 25,20</span>
-                        </div>
-                      </div>
-                    </div>
-                 </div>
-              </div>
-            </div>
-
-            {/* Example 2 */}
-            <div className="flex flex-col lg:flex-row-reverse items-center gap-10 md:gap-14 pt-8 md:pt-12 border-t border-white/5">
-              <div className="lg:w-1/2 w-full text-center lg:text-left">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-electric-purple/10 border border-electric-purple/30 text-electric-purple text-xs md:text-sm font-bold mb-4 uppercase tracking-wider">
-                  <Monitor className="w-4 h-4" /> Operação Sem Caos
-                </div>
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold font-display mb-4 md:mb-5">Esqueça os pedidos bagunçados</h3>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6 md:mb-8 font-medium">
-                  Organize o salão e delivery perfeitamente. Lances no Caixa via Tablet ou Computador vão direto para o Monitor de Produção, emitindo as comandas de montagem claremente e evitando gritaria no dia a dia.
-                </p>
-                <div className="flex flex-col gap-3 md:gap-4 justify-center lg:justify-start items-center lg:items-start text-sm md:text-base">
-                  <div className="flex items-center gap-3 text-zinc-200 bg-white/5 w-full md:w-auto px-4 py-2.5 rounded-xl border border-white/5">
-                    <CheckCircle2 className="w-5 h-5 text-gold shrink-0" /> PDV que emite comandas e cupons fiscais
-                  </div>
-                  <div className="flex items-center gap-3 text-zinc-200 bg-white/5 w-full md:w-auto px-4 py-2.5 rounded-xl border border-white/5">
-                    <CheckCircle2 className="w-5 h-5 text-gold shrink-0" /> Multiusuários integrados em tempo real
-                  </div>
-                </div>
-              </div>
-              <div className="lg:w-1/2 w-full">
-                 <div className="bg-white text-zinc-800 rounded-2xl p-4 shadow-2xl relative overflow-hidden flex flex-col h-auto sm:h-[360px]">
-                    <div className="flex items-center justify-between border-b border-zinc-200 pb-3 mb-3">
-                       <h4 className="font-bold text-zinc-800 text-sm">Monitor de Produção (KDS)</h4>
-                       <div className="text-[10px] font-bold text-purple-600 bg-purple-100 px-2 py-1 rounded">3 PEDIDOS NA FILA</div>
-                    </div>
-                    <div className="flex gap-4 overflow-x-auto pb-4 flex-1" style={{ scrollbarWidth: 'none' }}>
-                       {/* Ticket 1 */}
-                       <div className="w-full sm:w-[220px] shrink-0 bg-yellow-50 border border-yellow-200 rounded-xl p-3 flex flex-col h-full shadow-sm">
-                          <div className="flex justify-between items-center mb-2 pb-2 border-b border-yellow-200/50">
-                             <span className="font-black text-lg text-yellow-800">#104</span>
-                             <span className="text-[10px] font-bold text-yellow-700 bg-yellow-200 px-1.5 py-0.5 rounded">Balcão</span>
-                          </div>
-                          <div className="text-sm font-bold text-zinc-800 mb-1">1x Barca de Açaí 1L</div>
-                          <ul className="text-xs text-zinc-600 space-y-1 ml-1 mb-auto list-disc pl-3">
-                             <li className="font-medium text-red-600">Sem Leite Condensado</li>
-                             <li>Adic. Kiwi</li>
-                             <li>Adic. Leite Ninho</li>
-                             <li>Confete separado</li>
-                          </ul>
-                          <div className="mt-3 pt-2 border-t border-yellow-200/50 flex justify-end">
-                             <div className="bg-green-500 text-white text-xs font-bold py-1.5 px-3 rounded-lg w-full text-center">Pronto</div>
-                          </div>
-                       </div>
-                       {/* Ticket 2 */}
-                       <div className="w-full sm:w-[220px] shrink-0 bg-purple-50 border border-purple-200 rounded-xl p-3 flex flex-col h-full shadow-sm">
-                          <div className="flex justify-between items-center mb-2 pb-2 border-b border-purple-200/50">
-                             <span className="font-black text-lg text-purple-800">#105</span>
-                             <span className="text-[10px] font-bold text-purple-700 bg-purple-200 px-1.5 py-0.5 rounded flex items-center gap-1">iFood</span>
-                          </div>
-                          <div className="text-sm font-bold text-zinc-800 mb-1">2x Milkshake Morango</div>
-                          <ul className="text-xs text-zinc-600 space-y-1 ml-1 mb-auto list-disc pl-3">
-                             <li>Chantilly extra nas duas</li>
-                             <li>Embalar para viagem duplo</li>
-                          </ul>
-                          <div className="mt-3 pt-2 border-t border-purple-200/50 flex justify-end">
-                             <div className="bg-green-500 text-white text-xs font-bold py-1.5 px-3 rounded-lg w-full text-center">Pronto</div>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* Cost of not having control */}
-      <section className="py-16 md:py-24 relative z-10 px-6">
-        <div className="container mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-4">
-              Quanto custa <span className="text-red-500">não ter controle</span> da sua operação?
-            </h2>
-            <p className="text-zinc-400 text-base md:text-lg">
-              Muitos donos de açaiteria acreditam que estão lucrando porque vendem bastante. O problema é que faturamento não significa lucro.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto mb-12 md:mb-16">
-            {[
-              {
-                title: 'Precificação errada',
-                text: 'Uma diferença de apenas R$1 por produto pode representar centenas de reais perdidos no final do mês.',
-                icon: Calculator
-              },
-              {
-                title: 'Estoque sem controle',
-                text: 'Ingredientes desaparecem, vencem ou são utilizados sem registro, reduzindo sua margem sem que você perceba.',
-                icon: Box
-              },
-              {
-                title: 'Taxas ignoradas',
-                text: 'iFood, embalagens, entregas e custos operacionais podem consumir boa parte do lucro.',
-                icon: PieChart
-              },
-              {
-                title: 'Decisões no achismo',
-                text: 'Sem números reais, fica impossível saber quais produtos realmente geram lucro.',
-                icon: TrendingDown
-              }
-            ].map((card, idx) => (
-              <div key={idx} className="bg-[#12001e] border border-white/10 rounded-2xl p-6 flex flex-col items-start text-left hover:border-red-500/30 transition-all">
-                <card.icon className="w-8 h-8 text-red-500 mb-4" />
-                <h3 className="text-lg font-bold mb-2 text-white">{card.title}</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">{card.text}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="max-w-4xl mx-auto bg-gradient-to-r from-[#12001e] to-deep-purple/50 border border-electric-purple/30 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 justify-between text-center md:text-left relative overflow-hidden">
-            <div className="relative z-10 flex-1">
-              <h3 className="text-2xl md:text-3xl font-display font-bold mb-3">
-                Um único produto corrigido pode pagar a <span className="text-electric-purple">mensalidade do sistema.</span>
-              </h3>
-              <p className="text-zinc-300 text-sm md:text-base leading-relaxed">
-                O Gestão Mix calcula automaticamente custos, margem, estoque e lucro para que você tome decisões baseadas em números reais.
+            {/* Texto à esquerda */}
+            <div className="w-full lg:w-[45%] flex flex-col items-center lg:items-start text-center lg:text-left">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display leading-[1.1] md:leading-[1.1] tracking-tight mb-5 md:mb-6 uppercase">
+                CRIE A FICHA TÉCNICA DE CADA <span className="text-electric-purple text-transparent bg-clip-text bg-gradient-to-r from-electric-purple to-purple-400">PRODUTO MONTADO</span> EM SUA AÇAÍTERIA!
+              </h2>
+              
+              <p className="text-zinc-300 text-lg md:text-xl font-medium mb-8 leading-relaxed max-w-md lg:max-w-none">
+                O Gestão Mix calcula automaticamente seus insumos, taxas, margem de lucro e preço ideal de venda.
               </p>
+
+              {/* Bloco Visual de Resultado - Compacto */}
+              <div className="w-full bg-dark-card border border-white/10 rounded-[1.5rem] p-5 mb-8 shadow-2xl flex flex-col gap-3 max-w-sm mx-auto lg:mx-0">
+                <div className="flex justify-between items-center text-base md:text-lg font-bold bg-white/5 p-4 rounded-xl border border-white/5">
+                   <span className="text-zinc-300">Preço de Venda:</span>
+                   <span className="text-white text-xl">R$ 25,00</span>
+                </div>
+                <div className="flex justify-between items-center text-base md:text-lg font-bold bg-white/5 p-4 rounded-xl border border-white/5">
+                   <span className="text-zinc-400">Custo Total:</span>
+                   <span className="text-red-400 text-xl">- R$ 12,50</span>
+                </div>
+                <div className="flex justify-between items-center text-lg md:text-xl font-black bg-green-500/10 p-5 rounded-xl border border-green-500/20 mt-1">
+                   <span className="text-green-400">Lucro Real:</span>
+                   <span className="text-green-400 text-2xl md:text-3xl">R$ 12,50</span>
+                </div>
+              </div>
+
+              {/* Benefícios */}
+              <div className="flex flex-col gap-4 w-full max-w-sm mx-auto lg:mx-0">
+                {[
+                  'Controle completo dos insumos',
+                  'Preço ideal para Balcão e iFood',
+                  'Margem de lucro automática',
+                  'Ficha técnica profissional'
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-3 text-left">
+                    <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                      <span className="text-green-400 font-bold text-sm">✓</span>
+                    </div>
+                    <span className="text-white text-lg md:text-xl font-bold">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="relative z-10 shrink-0 bg-black/40 border border-white/10 rounded-2xl p-5 text-center shadow-lg">
-              <span className="block text-gold font-bold text-xl md:text-2xl mb-1">Menos de R$1,70</span>
-              <span className="block text-zinc-400 text-xs md:text-sm uppercase tracking-wider font-semibold">por dia para controlar <br/>toda sua operação.</span>
+
+            {/* Imagem da ficha técnica à direita */}
+            <div className="w-full lg:w-[55%] relative group flex justify-center mt-6 lg:mt-0">
+              {/* Soft shadow/Glow */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-electric-purple/20 blur-[80px] lg:blur-[120px] rounded-full opacity-70"></div>
+              
+              {/* Image Container */}
+              <div className="relative z-10 rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden border-2 border-white/10 shadow-[0_20px_60px_rgba(139,92,246,0.2)] lg:group-hover:scale-[1.02] transition-transform duration-700 w-full max-w-2xl mx-auto">
+                <img 
+                  src="https://i.postimg.cc/d32Rws6j/Chat-GPT-Image-7-de-jun-de-2026-15-50-41.jpg" 
+                  alt="Ficha Técnica Gestão Mix" 
+                  className="w-full h-auto block object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO 3 - COMO O SISTEMA AJUDA */}
+      <section className="py-16 md:py-24 relative z-10 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex flex-col gap-16 md:gap-24">
+            
+            {/* Card 1 */}
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+              <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
+                <div className="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mb-6 border border-gold/20 shadow-[0_0_15px_rgba(255,215,0,0.1)]">
+                  <PieChart className="w-8 h-8 text-gold" />
+                </div>
+                <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">Descubra seu lucro real</h3>
+                <p className="text-zinc-400 text-lg md:text-xl font-medium leading-relaxed">Veja automaticamente o lucro de cada produto.</p>
+              </div>
+              <div className="w-full md:w-1/2 rounded-[2rem] flex items-center justify-center group relative shadow-2xl overflow-hidden border border-white/10 p-2 md:p-6 bg-gradient-to-br from-white/5 to-transparent">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-gold/20 blur-[100px] rounded-full opacity-50 transition-opacity duration-700"></div>
+                <img 
+                  src="https://i.postimg.cc/brnGjmzC/Chat-GPT-Image-7-de-jun-de-2026-16-04-59.jpg" 
+                  alt="Dashboard de Lucro Gestão Mix" 
+                  className="relative z-10 w-full h-auto rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] transform group-hover:scale-[1.02] transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12">
+              <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
+                <div className="w-16 h-16 bg-electric-purple/10 rounded-2xl flex items-center justify-center mb-6 border border-electric-purple/20 shadow-[0_0_15px_rgba(139,92,246,0.1)]">
+                  <Box className="w-8 h-8 text-electric-purple" />
+                </div>
+                <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">Controle seu estoque</h3>
+                <p className="text-zinc-400 text-lg md:text-xl font-medium leading-relaxed">Saiba o que está acabando antes que falte.</p>
+              </div>
+              <div className="w-full md:w-1/2 rounded-[2rem] flex items-center justify-center group relative shadow-2xl overflow-hidden border border-white/10 p-2 md:p-6 bg-gradient-to-br from-white/5 to-transparent">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-electric-purple/20 blur-[100px] rounded-full opacity-50 transition-opacity duration-700"></div>
+                <img 
+                  src="https://i.postimg.cc/sxMYGPVd/Chat-GPT-Image-7-de-jun-de-2026-16-13-07.jpg" 
+                  alt="Estoque Gestão Mix" 
+                  className="relative z-10 w-full h-auto rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] transform group-hover:scale-[1.02] transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+              <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
+                <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.1)]">
+                  <ClipboardList className="w-8 h-8 text-blue-500" />
+                </div>
+                <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">Gerencie pedidos e vendas</h3>
+                <p className="text-zinc-400 text-lg md:text-xl font-medium leading-relaxed">Centralize toda a operação em um só lugar.</p>
+              </div>
+              <div className="w-full md:w-1/2 aspect-video bg-white/5 border-2 border-dashed border-white/20 rounded-[2rem] flex items-center justify-center group relative shadow-2xl">
+                <p className="text-zinc-500 font-bold uppercase tracking-widest text-center px-4">[ Print: Pedidos / PDV ]</p>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-blue-500/10 blur-[80px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO 4 - ANTES E DEPOIS */}
+      <section className="py-16 md:py-24 bg-black/40 border-y border-white/5 relative z-10 px-6">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-center mb-12 md:mb-16">A diferença na prática</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+            {/* Antes */}
+            <div className="bg-red-500/5 border border-red-500/20 rounded-[2rem] p-8 md:p-10 flex flex-col h-full shadow-[0_10px_40px_rgba(239,68,68,0.05)]">
+              <h3 className="text-xl md:text-2xl font-bold text-red-500 mb-8 border-b border-red-500/20 pb-4 flex items-center gap-3">
+                <span className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center shrink-0">❌</span> 
+                Sem Gestão Mix
+              </h3>
+              <ul className="space-y-6 flex-1">
+                {['Faz contas manualmente', 'Não sabe a margem real', 'Perde dinheiro sem perceber', 'Controle difícil'].map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-4 text-zinc-300 text-lg md:text-xl font-medium">
+                    <span className="text-red-500 font-bold mt-1 text-base">✗</span> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Depois */}
+            <div className="bg-green-500/5 border border-green-500/20 rounded-[2rem] p-8 md:p-10 flex flex-col h-full shadow-[0_10px_40px_rgba(34,197,94,0.05)] relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <h3 className="text-xl md:text-2xl font-bold text-green-400 mb-8 border-b border-green-500/20 pb-4 flex items-center gap-3 relative z-10">
+                <span className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center shrink-0">✅</span> 
+                Com Gestão Mix
+              </h3>
+              <ul className="space-y-6 flex-1 relative z-10">
+                {['Lucro calculado automaticamente', 'Estoque organizado', 'Custos controlados', 'Mais segurança nas decisões'].map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-4 text-white text-lg md:text-xl font-bold">
+                    <span className="text-green-400 font-bold mt-1 text-base">✓</span> {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -750,12 +652,6 @@ export default function App() {
                <div className="relative z-10 w-full flex flex-col items-center">
                   
                   {/* Highlight Block Above Price */}
-                  <div className="bg-red-500/10 border border-red-500/30 rounded-2xl p-4 mb-6 text-center w-full shadow-[0_0_15px_rgba(239,68,68,0.1)]">
-                     <h4 className="text-red-400 font-bold mb-2 text-sm md:text-base">Um único produto precificado errado pode custar mais do que a mensalidade do sistema.</h4>
-                     <p className="text-zinc-400 text-xs text-left mb-3">Muitos donos de açaiteria acreditam que estão lucrando porque vendem bastante. Mas pequenas diferenças na margem podem consumir centenas de reais por mês sem serem percebidas.</p>
-                     <p className="text-white text-xs text-left font-bold border-t border-red-500/20 pt-3">O Gestão Mix mostra o custo real, a <span className="text-gold">margem real</span> e o lucro real de cada produto.</p>
-                  </div>
-
                   <div className="w-full bg-electric-purple/10 border border-electric-purple/30 rounded-xl p-3 mb-8">
                      <p className="text-white font-bold text-center text-sm md:text-base leading-tight">
                         "Corrigir apenas <span className="text-gold">um produto</span> com margem errada já pode pagar a mensalidade do Gestão Mix."
