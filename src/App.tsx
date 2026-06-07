@@ -35,7 +35,7 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
 
-const FaqItem = ({ question, answer }: { question: string, answer: string }) => {
+const FaqItem = ({ question, answer }: { question: string, answer: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="border-b border-white/10 last:border-0">
@@ -54,7 +54,7 @@ const FaqItem = ({ question, answer }: { question: string, answer: string }) => 
             exit={{ height: 0, opacity: 0 }}
             className="overflow-hidden"
           >
-            <p className="pb-5 text-zinc-400 text-sm md:text-base leading-relaxed">{answer}</p>
+            <div className="pb-5 text-zinc-400 text-sm md:text-base leading-relaxed space-y-3">{answer}</div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -477,7 +477,7 @@ export default function App() {
                 <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.1)]">
                   <ClipboardList className="w-8 h-8 text-blue-500" />
                 </div>
-                <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">Gerencie pedidos e vendas</h3>
+                <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">Gerencie pedidos e vendas Balcão/Mesas</h3>
                 <p className="text-zinc-400 text-lg md:text-xl font-medium leading-relaxed">Centralize toda a operação em um só lugar.</p>
               </div>
               <div className="w-full md:w-1/2 rounded-[2rem] flex items-center justify-center group relative shadow-2xl overflow-hidden border border-white/10 p-2 md:p-6 bg-gradient-to-br from-white/5 to-transparent">
@@ -628,11 +628,7 @@ export default function App() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200">sem perceber.</span>
               </h2>
               
-              <p className="text-zinc-400 mb-8 max-w-md text-sm md:text-base leading-relaxed">
-                O Gestão Mix mostra exatamente quanto você lucra em cada produto vendido, controla seu estoque, acompanha seus custos e ajuda você a tomar decisões com base em números reais.
-              </p>
-              
-              <div className="space-y-4 md:space-y-5 w-full">
+              <div className="space-y-4 md:space-y-5 w-full mt-8">
                 {[
                   'Saiba exatamente quanto você ganha em cada venda',
                   'Descubra quais produtos geram mais lucro',
@@ -702,20 +698,120 @@ export default function App() {
           
           <div className="bg-dark-card border border-white/10 rounded-3xl p-6 md:p-8 shadow-xl">
             <FaqItem 
-              question="Preciso de um computador bom para rodar?" 
-              answer="Não! O Gestão Mix roda direto no navegador (nuvem). Você pode usar em qualquer PC básico, notebook, tablet ou até mesmo pelo celular. Não exige instalação pesada." 
+              question="Como recebo acesso ao sistema após a compra?" 
+              answer={
+                <>
+                  <p>Assim que seu pagamento for aprovado pela Hotmart, você recebe acesso <span className="text-electric-purple font-bold">imediatamente</span>.</p>
+                  <p>Dentro da área de membros você encontrará o link do sistema e as instruções para criar seu usuário e senha.</p>
+                  <p>Em poucos minutos você já pode começar a utilizar o Gestão Mix.</p>
+                </>
+              } 
             />
             <FaqItem 
-              question="É difícil de usar? Preciso dar treinamento pra equipe?" 
-              answer="O sistema foi desenhado para ser totalmente intuitivo (como usar um aplicativo de celular). Em menos de 30 minutos você cadastra seus primeiros produtos e os operadores já conseguem lançar vendas sem complicação." 
+              question="Posso testar sem risco?" 
+              answer={
+                <>
+                  <p>A compra é protegida pela <span className="text-electric-purple font-bold">Garantia Incondicional de 7 Dias da Hotmart</span>.</p>
+                  <p>Se dentro desse período você entender que o Gestão Mix não atende sua necessidade, basta solicitar o reembolso e receberá 100% do valor pago.</p>
+                  <p>Sem burocracia.</p>
+                  <p>Sem questionamentos.</p>
+                  <p>Sem risco para você.</p>
+                </>
+              } 
             />
             <FaqItem 
-              question="E se eu não gostar ou não me adaptar?" 
-              answer="Você tem 7 dias de garantia incondicional. Se achar que o sistema não é para você, basta solicitar o reembolso na Hotmart com um clique e devolvemos 100% do seu dinheiro, sem ressentimentos." 
+              question="Preciso assinar contrato ou ficar preso ao sistema?" 
+              answer={
+                <>
+                  <p>Não.</p>
+                  <p>O Gestão Mix funciona por assinatura mensal <span className="text-electric-purple font-bold">sem fidelidade</span>.</p>
+                  <p>Você pode cancelar quando quiser diretamente pela Hotmart.</p>
+                </>
+              } 
             />
             <FaqItem 
-              question="Possui integração direta com iFood?" 
-              answer="Neste plano, oferecemos a ferramenta de gestão de taxas e precificação para iFood. Isso garante que você lance as vendas de forma inteligente para controlar estoques e identificar exatamente quanto o iFood te cobra, protegendo seu lucro." 
+              question="O suporte está incluso na assinatura?" 
+              answer={
+                <>
+                  <p>Sim.</p>
+                  <p>O <span className="text-electric-purple font-bold">suporte já está incluso</span> no valor da assinatura.</p>
+                  <p>Você não paga nada adicional para receber ajuda, tirar dúvidas ou obter orientações sobre o uso do sistema.</p>
+                </>
+              } 
+            />
+            <FaqItem 
+              question="O sistema vale a pena para uma açaiteria pequena?" 
+              answer={
+                <>
+                  <p>Sim.</p>
+                  <p>Inclusive é nas operações menores que o controle de custos gera mais resultado.</p>
+                  <p>Muitos estabelecimentos descobrem que estão vendendo produtos com lucro muito menor do que imaginavam.</p>
+                  <p>O Gestão Mix ajuda a identificar isso rapidamente.</p>
+                </>
+              } 
+            />
+            <FaqItem 
+              question="R$49,90 por mês não é caro?" 
+              answer={
+                <>
+                  <p>Na prática, não.</p>
+                  <p>Um único produto com preço corrigido, uma taxa do iFood identificada ou um desperdício evitado pode gerar uma economia maior que o valor da mensalidade.</p>
+                  <p>O objetivo do sistema é fazer você ganhar mais dinheiro do que investe.</p>
+                </>
+              } 
+            />
+            <FaqItem 
+              question="Vou receber ajuda para configurar o sistema?" 
+              answer={
+                <>
+                  <p>Sim. Você não ficará sozinho.</p>
+                  <p>Ao se tornar assinante, você terá acesso ao suporte especializado para tirar dúvidas, aprender a configurar o sistema e utilizar todos os recursos da melhor forma possível.</p>
+                </>
+              } 
+            />
+            <FaqItem 
+              question="E se eu tiver dificuldade para usar?" 
+              answer={
+                <>
+                  <p>Sem problemas.</p>
+                  <p>Nosso suporte está disponível para ajudar você durante a implantação e utilização do sistema.</p>
+                  <p>O objetivo é fazer você extrair o máximo resultado da ferramenta, mesmo que nunca tenha usado um sistema de gestão antes.</p>
+                </>
+              } 
+            />
+            <FaqItem 
+              question="Quanto tempo demora para começar a usar?" 
+              answer={
+                <p>Na maioria dos casos, em menos de 30 minutos você já consegue cadastrar seus primeiros produtos, configurar seus insumos e começar a acompanhar seus lucros.</p>
+              } 
+            />
+            <FaqItem 
+              question="Vou perder meus dados se cancelar?" 
+              answer={
+                <>
+                  <p>Não.</p>
+                  <p>Seus dados permanecem armazenados por um período de segurança, permitindo que você reative sua assinatura futuramente sem precisar cadastrar tudo novamente.</p>
+                </>
+              } 
+            />
+            <FaqItem 
+              question="Posso acessar pelo celular?" 
+              answer={
+                <>
+                  <p>Sim.</p>
+                  <p>O Gestão Mix funciona em computadores, notebooks, tablets e celulares.</p>
+                  <p>Você pode acompanhar sua operação de qualquer lugar.</p>
+                </>
+              } 
+            />
+            <FaqItem 
+              question="Minha equipe pode utilizar o sistema?" 
+              answer={
+                <>
+                  <p>Sim.</p>
+                  <p>Você pode cadastrar funcionários e definir permissões específicas para cada função, como caixa, atendimento, cozinha e gerência.</p>
+                </>
+              } 
             />
           </div>
         </div>
