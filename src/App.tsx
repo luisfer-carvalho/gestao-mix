@@ -30,7 +30,9 @@ import {
   DollarSign,
   MessageCircle,
   Plus,
-  Minus
+  Minus,
+  Scale,
+  ArrowDown
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
@@ -457,8 +459,8 @@ export default function App() {
                 <div className="w-16 h-16 bg-electric-purple/10 rounded-2xl flex items-center justify-center mb-6 border border-electric-purple/20 shadow-[0_0_15px_rgba(139,92,246,0.1)]">
                   <Box className="w-8 h-8 text-electric-purple" />
                 </div>
-                <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">Controle seu estoque</h3>
-                <p className="text-zinc-400 text-lg md:text-xl font-medium leading-relaxed">Saiba o que está acabando antes que falte.</p>
+                <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">Nunca seja pego de surpresa</h3>
+                <p className="text-zinc-400 text-lg md:text-xl font-medium leading-relaxed">Receba alertas antes dos insumos acabarem.</p>
               </div>
               <div className="w-full md:w-1/2 rounded-[2rem] flex items-center justify-center group relative shadow-2xl overflow-hidden border border-white/10 p-2 md:p-6 bg-gradient-to-br from-white/5 to-transparent">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-electric-purple/20 blur-[100px] rounded-full opacity-50 transition-opacity duration-700"></div>
@@ -468,6 +470,81 @@ export default function App() {
                   className="relative z-10 w-full h-auto rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] transform group-hover:scale-[1.02] transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
+              </div>
+            </div>
+
+            {/* Card 2.5 - Venda por Peso */}
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 pt-8 md:pt-12 border-t border-white/5">
+              <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
+                <div className="w-16 h-16 bg-green-500/10 rounded-2xl flex items-center justify-center mb-6 border border-green-500/20 shadow-[0_0_15px_rgba(34,197,94,0.1)]">
+                  <Scale className="w-8 h-8 text-green-500" />
+                </div>
+                <h3 className="text-3xl md:text-4xl font-display font-bold mb-4 uppercase leading-[1.1] text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-200">Venda por peso sem precisar de balança integrada</h3>
+                <p className="text-zinc-300 text-lg md:text-xl font-medium leading-relaxed mb-6">
+                  Informe apenas o valor da venda e o sistema calcula automaticamente quantos gramas foram vendidos.
+                </p>
+                <p className="text-sm md:text-base text-zinc-500 mb-8 max-w-sm">
+                  Ideal para açaiterias e sorveterias que vendem produtos por peso e desejam controlar vendas e estoque sem investir em integração com balanças.
+                </p>
+                
+                <div className="flex flex-col gap-3 w-full md:w-auto">
+                  {['Controle automático de peso vendido', 'Sem balança integrada', 'Baixa automática de estoque', 'Relatórios mais precisos', 'Controle real de faturamento'].map((benefit, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" />
+                      <span className="text-zinc-300 font-medium text-sm md:text-base">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="w-full md:w-1/2 rounded-[2rem] flex flex-col items-center justify-center group relative shadow-2xl border border-white/10 p-6 md:p-8 bg-gradient-to-br from-white/5 to-transparent overflow-hidden">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-green-500/20 blur-[100px] rounded-full opacity-50"></div>
+                
+                {/* Visual Demonstration Custom UI */}
+                <div className="relative z-10 w-full max-w-sm flex flex-col gap-4">
+                  
+                  {/* Step 1 */}
+                  <div className="bg-dark-elem/80 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex justify-between items-center shadow-lg">
+                    <span className="text-zinc-400 font-medium text-sm">Preço do KG:</span>
+                    <span className="text-white font-bold text-lg">R$ 58,99</span>
+                  </div>
+                  
+                  <div className="flex justify-center -my-2.5 z-20">
+                    <div className="w-8 h-8 rounded-full bg-dark-bg border border-white/10 flex items-center justify-center shadow-md">
+                       <ArrowDown className="w-4 h-4 text-green-500" />
+                    </div>
+                  </div>
+                  
+                  {/* Step 2 */}
+                  <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-4 flex justify-between items-center shadow-[0_0_15px_rgba(34,197,94,0.1)] relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-green-500"></div>
+                    <span className="text-green-50 font-medium pl-2">Venda realizada:</span>
+                    <span className="text-green-400 font-black text-xl">R$ 30,00</span>
+                  </div>
+                  
+                  <div className="flex justify-center -my-2.5 z-20">
+                    <div className="w-8 h-8 rounded-full bg-dark-bg border border-white/10 flex items-center justify-center shadow-md">
+                       <ArrowDown className="w-4 h-4 text-green-500" />
+                    </div>
+                  </div>
+                  
+                  {/* Step 3 */}
+                  <div className="bg-dark-elem/80 backdrop-blur-sm border border-white/10 rounded-xl p-5 flex flex-col items-center text-center shadow-lg">
+                    <span className="text-zinc-400 font-medium text-sm mb-1">Peso calculado automaticamente:</span>
+                    <span className="text-white font-black text-3xl tracking-tight">509<span className="text-lg text-zinc-500 ml-1">g</span></span>
+                  </div>
+                  
+                  {/* Step 4 Updates */}
+                  <div className="mt-4 bg-black/40 rounded-xl p-4 border border-white/5">
+                    <p className="text-xs text-zinc-500 uppercase tracking-wider font-bold mb-3 text-center">Atualizações Automáticas</p>
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded bg-white/5 text-zinc-300 border border-white/10 flex items-center gap-1"><CheckCircle2 className="w-3 h-3 text-green-500" /> Estoque</span>
+                      <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded bg-white/5 text-zinc-300 border border-white/10 flex items-center gap-1"><CheckCircle2 className="w-3 h-3 text-green-500" /> Relatórios</span>
+                      <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded bg-white/5 text-zinc-300 border border-white/10 flex items-center gap-1"><CheckCircle2 className="w-3 h-3 text-green-500" /> Faturamento</span>
+                    </div>
+                  </div>
+                  
+                </div>
               </div>
             </div>
 
@@ -531,6 +608,17 @@ export default function App() {
                 ))}
               </ul>
             </div>
+          </div>
+          
+          <div className="mt-16 text-center">
+            <a 
+              href="https://pay.hotmart.com/A106056595I?checkoutMode=10"
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-gold text-[#12001e] px-8 py-5 md:px-12 md:py-6 rounded-full font-bold text-lg md:text-xl md:text-2xl transition-all shadow-[0_0_30px_rgba(255,215,0,0.3)] hover:shadow-[0_0_50px_rgba(255,215,0,0.5)] hover:scale-105 uppercase tracking-wide cursor-pointer"
+            >
+              Garantir meu acesso agora &rarr;
+            </a>
           </div>
         </div>
       </section>
