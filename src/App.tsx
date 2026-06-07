@@ -480,9 +480,14 @@ export default function App() {
                 <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">Gerencie pedidos e vendas</h3>
                 <p className="text-zinc-400 text-lg md:text-xl font-medium leading-relaxed">Centralize toda a operação em um só lugar.</p>
               </div>
-              <div className="w-full md:w-1/2 aspect-video bg-white/5 border-2 border-dashed border-white/20 rounded-[2rem] flex items-center justify-center group relative shadow-2xl">
-                <p className="text-zinc-500 font-bold uppercase tracking-widest text-center px-4">[ Print: Pedidos / PDV ]</p>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-blue-500/10 blur-[80px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="w-full md:w-1/2 rounded-[2rem] flex items-center justify-center group relative shadow-2xl overflow-hidden border border-white/10 p-2 md:p-6 bg-gradient-to-br from-white/5 to-transparent">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-blue-500/20 blur-[100px] rounded-full opacity-50 transition-opacity duration-700"></div>
+                <img 
+                  src="https://i.postimg.cc/WbPKct8X/Chat-GPT-Image-7-de-jun-de-2026-16-23-31.jpg" 
+                  alt="Pedidos e Vendas Gestão Mix" 
+                  className="relative z-10 w-full h-auto rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] transform group-hover:scale-[1.02] transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
               </div>
             </div>
 
