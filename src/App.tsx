@@ -41,13 +41,21 @@ const FaqItem = ({ question, answer }: { question: string, answer: React.ReactNo
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="border-b border-white/10 last:border-0">
-      <button 
+      <div 
+        role="button"
+        tabIndex={0}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-5 flex items-center justify-between text-left focus:outline-none"
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setIsOpen(!isOpen);
+          }
+        }}
+        className="w-full py-5 flex items-center justify-between text-left focus:outline-none cursor-pointer"
       >
         <span className="font-bold text-lg text-zinc-200">{question}</span>
         {isOpen ? <Minus className="w-5 h-5 text-electric-purple shrink-0" /> : <Plus className="w-5 h-5 text-gold shrink-0" />}
-      </button>
+      </div>
       <AnimatePresence>
         {isOpen && (
           <motion.div 
@@ -615,7 +623,7 @@ export default function App() {
               href="https://pay.hotmart.com/A106056595I?checkoutMode=10"
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-gold text-[#12001e] px-8 py-5 md:px-12 md:py-6 rounded-full font-bold text-lg md:text-xl md:text-2xl transition-all shadow-[0_0_30px_rgba(255,215,0,0.3)] hover:shadow-[0_0_50px_rgba(255,215,0,0.5)] hover:scale-105 uppercase tracking-wide cursor-pointer"
+              className="inline-flex items-center justify-center px-8 py-5 md:px-12 md:py-6 rounded-full bg-gradient-to-r from-gold-light via-gold to-gold-dark text-black font-extrabold text-lg md:text-xl md:text-2xl transition-all shadow-[0_0_30px_rgba(255,215,0,0.4)] hover:shadow-[0_0_40px_rgba(255,215,0,0.6)] hover:scale-105 uppercase tracking-wide cursor-pointer"
             >
               Garantir meu acesso agora &rarr;
             </a>
