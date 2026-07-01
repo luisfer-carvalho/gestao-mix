@@ -621,8 +621,6 @@ export default function App() {
           <div className="mt-16 text-center">
             <a 
               href="https://pay.hotmart.com/A106056595I?checkoutMode=10"
-              target="_blank" 
-              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-5 md:px-12 md:py-6 rounded-full bg-gradient-to-r from-gold-light via-gold to-gold-dark text-black font-extrabold text-lg md:text-xl md:text-2xl transition-all shadow-[0_0_30px_rgba(255,215,0,0.4)] hover:shadow-[0_0_40px_rgba(255,215,0,0.6)] hover:scale-105 uppercase tracking-wide cursor-pointer"
             >
               Garantir meu acesso agora &rarr;
@@ -768,7 +766,7 @@ export default function App() {
                     <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> <span className="font-medium">Suporte incluso</span></div>
                   </div>
                   
-                  <a href="https://pay.hotmart.com/A106056595I?checkoutMode=10" target="_blank" rel="noopener noreferrer" className="w-full px-4 py-4 rounded-2xl bg-gradient-to-r from-gold-light via-gold to-gold-dark text-black shadow-[0_10px_30px_rgba(255,215,0,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all flex flex-col items-center justify-center">
+                  <a href="https://pay.hotmart.com/A106056595I?checkoutMode=10" className="w-full px-4 py-4 rounded-2xl bg-gradient-to-r from-gold-light via-gold to-gold-dark text-black shadow-[0_10px_30px_rgba(255,215,0,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all flex flex-col items-center justify-center">
                     <span className="font-black text-xl md:text-2xl uppercase tracking-wide drop-shadow-sm">Começar Agora</span>
                     <span className="text-xs font-bold opacity-80 mt-1">Acesso imediato após confirmação.</span>
                   </a>
